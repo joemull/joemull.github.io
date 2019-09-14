@@ -50,17 +50,24 @@ table {
 }
 
 
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 			box-sizing: border-box;
 
+}
 
-
-/* EXPERIMENTING */
+.container {
+	margin: 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 960px;
+}
 
 body {
   background: #F3F3F3;
-  max-width: 960px;
-  margin: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 article {
@@ -83,19 +90,19 @@ article {
 h1 {
   font: bold 28px Georgia, Times, serif;
   color: #1E1E1E;
-  margin: 25px 0 0 0;
+  margin-top: 25px;
 }
 
 h2 {
   font: 22px Georgia, Times, serif;
   color: #1E1E1E;
-  margin: 20px 0 0 0;
+  margin-top: 20px;
 }
 
 h3 {
   font: 16px Georgia, Times, serif;
   color: #414141;
-  margin: 15px 0 0 0;
+  margin-top: 15px;
 }
 
 p {
@@ -116,7 +123,7 @@ footer {
 }
 
 .first-para-in-section {
-  margin: 10px 0 0 0;
+  margin-top: 10px;
   text-indent: 0;
 }
 
