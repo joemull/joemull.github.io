@@ -1,0 +1,101 @@
+/* Credit: I worked on parts of this with Julia Maxwell and LJ Varghese, and I took advice from Xinhao Liao on Slack */
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+/* Used this to know to add the two dots: https://www.w3schools.com/html/html_filepaths.asp */
+  background-image: url("../images/pidgeon-background.jpg");
+  background-repeat: no-repeat;
+  /* background-color: white; */
+  /* background-color: #dddddd; */
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.5em;
+  color: #c12258;
+}
+
+p {
+  color: black;
+  font-size: 18px;
+  padding-top: 15px;
+}
+
+a {
+  color: #c12258;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline:none;
+  border: 1px solid red;
+}
+
+main table {
+  border: 2px solid black;
+  border-radius: 10px;
+  /* Used this for this line: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_border-collapse */
+  border-collapse: separate;
+}
+
+.colhead {
+  min-width: 150px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  background: #7e0830;
+}
+
+tbody th, td {
+  text-align: center;
+  border-top: 2px solid black;
+  padding: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(0,0,0,0);
+}
+
+tr:hover {
+  background-color: #fab9cf;
+}
+
+thead tr:first-child th:first-child {
+  border-top-left-radius: 7px;
+}
+
+thead tr:first-child th:last-child {
+  border-top-right-radius: 7px;
+}
+
+tbody tr:last-child th:first-child {
+  border-bottom-left-radius: 7px;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 7px;
+}
+
+footer p {
+  color: white;
+}
+
+/* My footer was not behaving correctly with relative positioning, so I implemented the solution found here:
+https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ */
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 1280px;
+  min-height: 60px;
+  background-color: black;
+}
