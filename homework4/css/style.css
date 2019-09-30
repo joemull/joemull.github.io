@@ -71,9 +71,8 @@ footer{
 
 
 .container{
-
-  /*Your code here  */
   display: grid;
+  margin: auto;
   grid-template-columns: 100px 500px 100px;
   grid-row-gap: 15px;
 
@@ -84,12 +83,10 @@ footer{
 
 .nav{
 
-  width: 100%;
-  margin: auto;
   grid-column-start: 1;
-  grid-column-end:4;
-  grid-row-start:1;
-  grid-row-end:1;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: 1;
 
   /*Provided*/
   background-color: #ddd;
@@ -99,12 +96,15 @@ footer{
 
 header{
   background-attachment: fixed; /* Parallax effect */
-  background-image: url();      /* Your code here - Link to header.jpg in the images folder */
+  background-image: url("../images/header.jpg");
   background-position: center;  /* Parallax effect */
   background-repeat: no-repeat; /* Parallax effect */
   background-size: cover;       /* Parallax effect */
   color: white;
   height: 400px;                /* Parallax effect */
+
+  grid-column: 1 / -1;
+  grid-row: 2 / span 1;
 
   /*Your code here - cover the entire row*/
 }
@@ -117,59 +117,73 @@ header p{
 }
 
 .about-image{
-  /*Your code here */
+  grid-column: 1 / -1;
+  grid-row: 3 / span 1;
+  max-height: 700px;
+  overflow: hidden;
 
 }
 
 .about{
-  /*Your code here */
+  grid-column: 2 / span 2;
+  grid-row: 3 / span 1;
 }
 
 .method-image{
-  /*Your code here */
+  grid-column: 1 / -1;
+  grid-row: 4 / span 1;
+  max-height: 700px;
+  overflow: hidden;
 }
 
 .method{
-    /*Your code here - start in the 2nd column*/
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
 }
 
 .clients-image{
- /*Your code here */
+  grid-column: 1 / -1;
+  grid-row: 5 / span 1;
+  max-height: 700px;
+  overflow: hidden;
 }
 
 .clients{
- /*Your code here */
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
 }
 
-.contact-image{
-   /*Your code here */
+.contact-image {
+  grid-column: 1 / -1;
+  grid-row: 6 / span 1;
+  max-height: 700px;
+  overflow: hidden;
 }
 
 .contact{
-   /*Your code here */
+  grid-column: 2 / span 1;
+  grid-row: 6 / span 1;
 }
 
 .text-block{
   grid-column-start: 2;
   grid-column-end: 3;
-  padding: 30px;
-
+  margin: auto;
   background-color: rgba(255, 255, 255, .8);
   border: 10px solid black;
   padding: 30px;
 }
 
-
-
-@media all and (max-width: 800px) {
+@media all and (min-width: 800px) {
 
   .container{
-    grid-template-columns: 50px, auto, 500px, auto, 50px;
-    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;*/
+
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+    width: 100vw;
   }
 
   .nav{
-
     background-color: #ddd;
     text-align: right;
     padding: 35px 0;
@@ -177,36 +191,45 @@ header p{
   }
 
   .about-image{
-     /*Your code here */
+     grid-column: 2 / span 2;
+     grid-row: 3 / span 1;
+     max-height: 700px;
+     vertical-align: center;
     }
 
   .about{
-    /*Your code here */
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 1;
   }
 
   .method-image{
-    /*Your code here */
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 1;
   }
 
   .method{
-    /*Your code here */
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
   }
 
   .clients-image{
-    /*Your code here */
-
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
   }
 
   .clients{
-    /*Your code here */
+    grid-column: 3 / span 2;
+    grid-row: 5 / span 1;
   }
 
   .contact-image{
-    /*Your code here */
+    grid-column: 3 / span 2;
+    grid-row: 6 / span 1;
   }
 
   .contact{
-    /*Your code here */
+    grid-column: 2 / span 2;
+    grid-row: 6 / span 1;
    }
 
 }  /*End the media query*/
