@@ -2,7 +2,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: Georgia, sans-serif;
+  font-family: Georgia, serif;
   background-color: #F9F9F9;
   color: #414141;
 }
@@ -86,7 +86,7 @@ h1 {
   background-color: #F3F3F3;
 }
 
-a img {
+.book-cover img {
   max-width: 100%;
 }
 
@@ -121,7 +121,7 @@ a img {
 
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 1200px) {
 
   .story {
     max-width: 800px;
