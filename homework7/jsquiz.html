@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>JavaScript</title>
+</head>
+<body>
+ You may not change the structure of the ordered list in any way, or add any ids or classes to it or the list items.
+ <ol>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+ <li>Blah</li>
+</ol>
+<fieldset>
+ <label>
+ <input id='red' type="radio" value = "red">
+ Red
+ </label>
+ <label>
+ <input id='blue' type="radio" value = "blue">
+ Blue
+ </label>
+</fieldset>
+<script type="text/javascript">
+// YOUR CODE HERE
+  fifth = document.querySelectorAll('li')[4];
+  red.oninput = function() {
+    fifth.style.color = 'red';
+    red.checked = true;
+    blue.checked = false;
+  }
+  blue.oninput = function() {
+    fifth.style.color = 'blue';
+    red.checked = false;
+    blue.checked = true;
+  }
+</script>
+</body>
+</html>
