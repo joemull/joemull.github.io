@@ -81,6 +81,10 @@ p {
   flex-wrap: wrap;
 }
 
+.book-covers img {
+  width:100%
+}
+
 .book-cover {
   max-width: 100%;
   padding: 15px 0;

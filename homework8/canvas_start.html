@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Drawing Area</title>
+		<!-- You can add your style here rather than in an external style sheet. -->
+		<style>
+			canvas {
+			    border:5px solid #d3d3d3;
+			    background-color: #f1f1f1;
+			    display: block;
+			}
+		</style>
+	</head>
+<body>
+    <!-- DO NOT MODIFY THIS HTML -->
+    <canvas id = "myCanvas" width = "350" height = "500"  ></canvas>
+    <input type = "color" id = "picker"/>
+		<script type="text/javascript">
+
+
+			var c = document.querySelector("#myCanvas");
+			// c.width = "80vw";
+			// c.height = "80vh";
+			var ctx = c.getContext("2d");
+
+			function draw(x,y) {
+				ctx.arc(x-12,y-12,10,0 * Math.PI,2 * Math.PI);
+				ctx.fill();
+			}
+
+			myCanvas.addEventListener(
+				'mousemove', function(e) {
+					console.log(e);
+					ctx.beginPath();
+					draw(e.clientX,e.clientY);
+					var x = e.clientX;
+					var y = e.clientY;
+					draw(x,y);
+				}
+			)
+
+		</script>
+</body>
+</html>
