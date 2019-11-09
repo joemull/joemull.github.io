@@ -18,91 +18,86 @@ darker orange: #F29D35
 
 /* BODY BASICS */
 body {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: Georgia, serif;
-  background-color: #F9F9F9; /* light gray */
-  color: #414141;
-}
-
-/* BASIC GRID CONTAINER */
-/* .container {
-  display: grid;
   margin: auto;
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
+  background-color: #F9F9F9; /* light gray */
+  /* color: #414141; */
+}
+
+
+/* TITLE AND NAVIGATION */
+h1 a {
+  display: block;
   width: 100vw;
-  grid-template-columns: 30px auto 30px; */
-  /* grid-template-rows: auto 300px auto 50px; */
+  text-align: left;
+  color: white;
+  background-color: #BF4539;
+  font-size: 1.5em;
+  padding: 15px;
+  text-decoration: none;
 }
 
-/* HIDING BANNER IMAGE IN MOBILE */
-.banner {
-  display: none;
+nav a {
+  color: white;
+  background-color: #467c76;
+  text-align: center;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 15px;
+  text-decoration: none;
+  display: block;
 }
 
+nav a:hover {
+  color: #1E1E1E;
+  background-color: #F2AE2E;
+}
+
+.selected {
+  color: #1E1E1E;
+  background-color: #D9AD77;
+}
+
+/* CONTAINER */
+.container {
+  width: 100vw;
+}
 
 /* SETTING BOUNDARIES ON IMAGES */
 img {
   display: block;
   max-width: 100%;
-  padding-bottom: 1em;
 }
 
-.gallery {
-  padding-top: 1em;
+
+.collection-heading {
+  text-align: center;
+  font-size: 2em;
+  padding: 40px;
 }
 
 #profile {
   border-radius: 50%;
-  max-width: 60%;
-  margin: 30px auto 0;
-}
-
-/* NAVIGATION */
-nav {
-  /* grid-column: 1 / -1; */
-  text-align: right;
-  font-size: 16pt;
-  background: #4F8C86;
-  color: #1E1E1E;
-  line-height: 1em;
-}
-
-section a, nav a {
-  color: #1E1E1E;
-  text-decoration: none;
-}
-
-nav a {
+  max-width: 200px;
+  margin: 20px auto 10px;
   display: block;
-  padding: 15px 15px;
 }
 
-.hook:hover {
-  background-color: #F3F3F3;
-}
-
-nav li:hover {
-  background-color: #F2AE2E;
-}
 
 /* STANDARD ELEMENT STYLING */
 
-h1 {
-  /* text-align: center; */
-  font-size: 1.8em;
-  /* grid-column: 1 / -1; */
-  padding: 12pt 10px;
-}
 
 h3 {
   font-size: .7em;
   font-variant: small-caps;
+  font-family: 'Montserrat',sans-serif;
   margin-top: 1em;
-  margin: 0 10px;
-  display: inline-block;
+  padding: 0 10px;
 }
 
 h2 {
+  grid-column: 2 / -2;
   font-size: 1.3em;
   line-height: 1.5em;
   padding: .3em 10px;
@@ -110,7 +105,7 @@ h2 {
 
 p {
   line-height: 1.7em;
-  padding: 0 10px 1.5em;
+  padding: 0 10px 5px;
 }
 
 .image-credit {
@@ -118,102 +113,190 @@ p {
   font-size: .7em;
 }
 
+.story-lead {
+  padding-bottom: 0;
+  margin-bottom: 1.5em;
+}
+
+.story-lead:hover {
+  background-color: #F3F3F3;
+}
 
 
 /* GALLERY */
-.book-covers {
+/* .book-covers { */
   /* grid-column: 2 / -2; */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+} */
+
+.book-cover img {
+  width:100%;
 }
 
-.book-covers img {
-  width:100%
-}
-
-.book-cover {
-  max-width: 100%;
-  padding: 15px 0;
-  display: inline-block;
+.book-cover h3 {
+  font-variant: small-caps;
+  padding: 15px 0 20px;
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 .book-cover:hover {
   background-color: #F3F3F3;
 }
 
-.book-cover img {
-  max-width: 100%;
+section a, .book-cover a {
+  color: #1E1E1E;
+  text-decoration: none;
 }
 
 
-@media all and (min-width: 450px) {
+@media all and (min-width: 500px) {
+
+  h1 {
+    width: 34vw;
+  }
+
+  h1, h1 a {
+    display: inline-block;
+  }
+
+  h1 a {
+    padding: 15px;
+    line-height: 28px;
+    vertical-align: top;
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  nav ul {
+    text-align: right;
+  }
+
+  nav, nav li, nav a {
+    display: inline-block;
+    text-align: right;
+  }
+
+
+  nav a {
+    padding: 15px 20px;
+    line-height: 28px;
+    vertical-align: top;
+    margin-right: -5px;
+  }
 
   .container {
     display: grid;
     margin: auto;
+    grid-template-columns: 30px auto auto 30px;
     width: 100vw;
-    grid-template-columns: 50px auto auto 50px;
+    max-width: 960px;
   }
 
-  nav {
-    grid-column: 1 / -1;
+  .gallery, .story, .collection, form {
+    max-width: 680px;
   }
 
-  nav li {
-    display: inline-block;
-    padding: 20px;
-  }
-
-  h1 {
-    grid-column: 2 / -2;
-  }
-
-  section {
-    grid-column: 2 / -2;
-    min-height: min-content;   
-  }
+  /* nav a {
+    padding: 15px 10px;
+  } */
 
   .story-lead {
-    margin-bottom: 1.5em;
-    display: flex;
+    grid-column: 2 / -2;
+    min-height: min-content;
+    padding-top: 15px;
+    position: relative;
     /* border-top: #6C6C6C solid 1px; */
     /* padding-top: 1em; */
   }
 
-  .story-lead:nth-of-type(odd) {
-    flex-direction: row;
-  }
-
-  .story-lead:nth-of-type(even) {
-    flex-direction: row-reverse;
-  }
-
   .story-lead img {
-    max-height: 50vw;
-    padding-bottom: 0;
+    width: 300px;
+    max-width: 45vw;
+    z-index: 1;
   }
 
+  .story-lead:nth-of-type(odd) img {
+    float: left;
+    top: 0;
+    left: 0;
+    margin: 0 15px 15px 0;
+  }
+
+  .story-lead:nth-of-type(even) img {
+    float: right;
+    top: 0;
+    right: 0;
+    margin: 0 0 15px 15px;
+  }
+
+  .story-lead:nth-of-type(even) .hook {
+    text-align: right;
+  }
+
+  .hook {
+    position: relative;
+    z-index: .5;
+  }
+
+  .story {
+    grid-column: 2 / -2;
+    margin: auto;
+    padding: 30px 0;
+  }
+
+  .story img {
+    padding-bottom: 10px;
+  }
+
+  .gallery {
+    padding-top: 20px;
+  }
+
+  .book-covers {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: space-around;
+  }
 
   .book-cover {
-    max-width: 47%;
-    padding: 3% 1.5%;
-    margin: inherit auto;
+    max-width: 215px;
+    margin: 10px;
   }
+
+  .book-cover img {
+    border-radius: 1.5px;
+    box-shadow: 1px 5px 7px 1px gray;
+  }
+
 
 }
 
-@media all and (min-width: 1200px) {
+/* @media all and (min-width: 1200px) {
 
   nav {
+    position: relative;
+  } */
+
+
+  /* nav {
     max-width: 800px;
-    margin: auto;
+    margin: 0;
   }
 
   .story {
     max-width: 800px;
     margin: auto;
   }
+
 
   .book-covers {
     max-width: 960px;
@@ -226,4 +309,4 @@ p {
     margin: inherit auto;
   }
 
-}
+} */

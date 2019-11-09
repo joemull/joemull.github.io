@@ -6,66 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/html5reset.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- skip link -->
-    <div class="container">
-      <nav>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <!-- <li>Editorial Work</li>
-          <li>Digital Curation</li> -->
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <h1><a href='index.html'>Joseph Muller</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Bio</a></li>
+        <!-- <li>Editorial Work</li>
+        <li>Digital Curation</li> -->
+        <li><a class='selected' href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
     <!-- <div class="banner"> -->
       <!-- <img src="images/drukkersmerk-a.jpg" alt=""> -->
       <!-- TODO: Fix this so that the image only loads in CSS in tablet view -->
       <!-- http://hdl.handle.net/10934/RM0001.COLLECT.114390 -->
     <!-- </div> -->
-    <h1>All Projects</h1>
-    <section class="story-lead">
-      <img src="images/other/walker_boston-small.jpg" alt="Example item from Harvard Digital Collections: Map of Trolley Routes in New England"</img>
-      <div class="hook">
-        <a href="harvard-library.html">
-          <h3>Jun 2019–Aug 2019</h3>
-          <h2>Full Text at Harvard Library</h2>
-          <p>I led a project to develop a new content access feature during an internship at Harvard Library.</p>
-        </a>
-      </div>
-    </section>
-    <section class="story-lead">
-      <img src="images/other/library-lab-small.jpg" alt="Joseph Muller presenting a poster at the University of Michigan Library"</img>
-      <div class="hook">
-        <a href="library-lab.html">
-          <h3>Jan 2019–Apr 2020</h3>
-          <h2>Supporting the Research Lifecycle at the University of Michigan Library</h2>
-          <p>Our IMLS-funded research lab investigated library support for qualitative researchers.</p>
-        </a>
-      </div>
-    </section>
-    <section class="story-lead">
-      <img src="images/other/open-book-small.jpg" alt="The Tale of Matsura, translated by Wayne Lammers, and Writing and Renunciation in Medieval Japan, by Rajyashree Pandey"</img>
-      <div class="hook">
-        <a href="humanities-open-book.html">
-          <h3>Aug 2018–Apr 2020</h3>
-          <h2>Humanities Open Book at the University of Michigan Press</h2>
-          <p>I curated metadata and advised authors during an NEH/Mellon digitization grant.</p>
-        </a>
-      </div>
-    </section>
-    <section class="story-lead">
-      <img src="images/book-covers/smith-small.jpg" alt="Interpreting Kigali, Rwanda, by Korydon H. Smith and Tomà Berlanda">
-      <div class="hook">
-        <a href="copyediting.html">
-          <h3>Jun 2016–Aug 2018</h3>
-          <h2>Copyediting</h2>
-          <p>As a copyeditor for university presses and authors, I edited over 1.7 million words to Chicago style.</p>
-        </a>
-      </div>
-    </section>
+    <main class="container" class="collection">
+      <h2 class="collection-heading">Projects</h2>
+      <section class="story-lead">
+        <img class="story-photo" src="images/other/walker_boston-small.jpg" alt="Example item from Harvard Digital Collections: Map of Trolley Routes in New England"</img>
+        <div class="hook">
+          <a href="harvard-library.html">
+            <h3>Jun 2019–Aug 2019</h3>
+            <h2>Full Text at Harvard Library</h2>
+            <p>I led a project to develop a new content access feature while interning at Harvard Library.</p>
+          </a>
+        </div>
+      </section>
+      <section class="story-lead">
+        <img class="story-photo" src="images/other/library-lab-small.jpg" alt="Joseph Muller presenting a poster at the University of Michigan Library"</img>
+        <div class="hook">
+          <a href="library-lab.html">
+            <h3>Jan 2019–Apr 2020</h3>
+            <h2>Research at the University of Michigan Library</h2>
+            <p>Our IMLS-funded research lab assessed library support for qualitative researchers.</p>
+          </a>
+        </div>
+      </section>
+      <section class="story-lead">
+        <img class="story-photo" src="images/other/open-book-small.jpg" alt="The Tale of Matsura, translated by Wayne Lammers, and Writing and Renunciation in Medieval Japan, by Rajyashree Pandey"</img>
+        <div class="hook">
+          <a href="humanities-open-book.html">
+            <h3>Aug 2018–Apr 2020</h3>
+            <h2>Open Books at the University of Michigan Press</h2>
+            <p>I curated metadata and advised authors during an NEH/Mellon digitization grant.</p>
+          </a>
+        </div>
+      </section>
+      <section class="story-lead">
+        <img class="story-photo" src="images/book-covers/smith-small.jpg" alt="Interpreting Kigali, Rwanda, by Korydon H. Smith and Tomà Berlanda">
+        <div class="hook">
+          <a href="copyediting.html">
+            <h3>Jun 2016–Aug 2018</h3>
+            <h2>Copyediting</h2>
+            <p>As a copyeditor for university presses and authors, I edited over 1.7 million words to Chicago style.</p>
+          </a>
+        </div>
+      </section>
     <!-- TODO: credit Harvard Library Brand Guidelines -->
-    </div>
+    </main>
   </body>
 </html>
