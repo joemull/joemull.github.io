@@ -77,7 +77,7 @@ nav a {
   padding: 15px 15px;
 }
 
-section:hover {
+.hook:hover {
   background-color: #F3F3F3;
 }
 
@@ -119,11 +119,6 @@ p {
 }
 
 
-.story-lead {
-  margin-bottom: 1.5em;
-  /* border-top: #6C6C6C solid 1px; */
-  /* padding-top: 1em; */
-}
 
 /* GALLERY */
 .book-covers {
@@ -152,7 +147,7 @@ p {
 }
 
 
-@media all and (min-width: 425px) {
+@media all and (min-width: 450px) {
 
   .container {
     display: grid;
@@ -170,8 +165,24 @@ p {
     padding: 20px;
   }
 
-  .collection {
-    grid-column: 2 / -2;
+
+  .story-lead {
+    margin-bottom: 1.5em;
+    display: flex;
+    /* border-top: #6C6C6C solid 1px; */
+    /* padding-top: 1em; */
+  }
+
+  .story-lead:nth-of-type(odd) {
+    flex-direction: row;
+  }
+
+  .story-lead:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+
+  .story-lead img {
+    width: 100%;
   }
 
 
