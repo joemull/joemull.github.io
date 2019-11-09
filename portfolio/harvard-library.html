@@ -6,34 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/html5reset.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- skip link -->
-    <div class="container">
-      <nav>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <!-- <li>Editorial Work</li>
-          <li>Digital Curation</li> -->
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <h1><a href='index.html'>Joseph Muller</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Bio</a></li>
+        <!-- <li>Editorial Work</li>
+        <li>Digital Curation</li> -->
+        <li><a class='selected' href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
     <!-- <div class="banner"> -->
       <!-- <img src="images/drukkersmerk-a.jpg" alt=""> -->
       <!-- TODO: Fix this so that the image only loads in CSS in tablet view -->
       <!-- http://hdl.handle.net/10934/RM0001.COLLECT.114390 -->
     <!-- </div> -->
-    <article class="story">
-      <img src="images/other/walker_boston.jpg" alt="Example item from Harvard Digital Collections: Map of Trolley Routes in New England"</img>
-      <!-- Another possibility: https://digitalcollections.library.harvard.edu/catalog/990018739110203941 -->
-      <p class='image-credit'>Geo. H. Walker & Co, “Birds Eye View of Trolley Routes in New England” (Boston: New England Street Railway Club, 1904), 52 x 36 cm, <a href='https://id.lib.harvard.edu/curiosity/scanned-maps/44-990045311330203941'>Harvard Map Collection</a>, Harvard University.</p>
-      <h3>Jun 2019–Aug 2019</h3>
-      <h1>Full Text at Harvard Library</h1>
-      <p>As an intern in Digital Strategies and Innovation at Harvard Library, I led a project to develop a new tool for accessing the uncorrected plain text of digitized items in Harvard University’s brand new open digital archive, <a href="https://library.harvard.edu/digital-collections">Harvard Digital Collections</a>. Before, users could not view all the plain text of a multi-page item in one place. We created a new page that loads all the plain text segments in one place using JavaScript and allows the user to download a plain text file.</p>
-      <p>We developed this tool with the goal of improving the accessibility of Harvard Digital Collections. Users of assistive technology as well as anyone who wants the full plain text will be able to access it in one place. The text is not yet corrected or marked up, so it is not fully accessible, but the first step was getting it all in one place.</p>
-    </article>
+    <main class="container">
+      <article class="story">
+        <img class="story-photo" src="images/other/walker_boston.jpg" alt="Example item from Harvard Digital Collections: Map of Trolley Routes in New England"</img>
+        <!-- Another possibility: https://digitalcollections.library.harvard.edu/catalog/990018739110203941 -->
+        <p class='image-credit'>Geo. H. Walker & Co, “Birds Eye View of Trolley Routes in New England” (Boston: New England Street Railway Club, 1904), 52 x 36 cm, <a href='https://id.lib.harvard.edu/curiosity/scanned-maps/44-990045311330203941'>Harvard Map Collection</a>, Harvard University.</p>
+        <h3>Jun 2019–Aug 2019</h3>
+        <h2>Full Text at Harvard Library</h2>
+        <p>As an intern in Digital Strategies and Innovation at Harvard Library, I led a project to develop a new tool for accessing the uncorrected plain text of digitized items in Harvard University’s brand new open digital archive, <a href="https://library.harvard.edu/digital-collections">Harvard Digital Collections</a>. Before, users could not view all the plain text of a multi-page item in one place. We created a new page that loads all the plain text segments in one place using JavaScript and allows the user to download a plain text file.</p>
+        <p>We developed this tool with the goal of improving the accessibility of Harvard Digital Collections. Users of assistive technology as well as anyone who wants the full plain text will be able to access it in one place. The text is not yet corrected or marked up, so it is not fully accessible, but the first step was getting it all in one place.</p>
+      </article>
     <!-- TODO: credit Harvard Library Brand Guidelines -->
-    </div>
+    </main>
   </body>
 </html>
