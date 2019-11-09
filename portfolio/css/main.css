@@ -47,24 +47,38 @@ img {
   padding-bottom: 1em;
 }
 
+.gallery {
+  padding-top: 1em;
+}
+
+#profile {
+  border-radius: 50%;
+  max-width: 60%;
+  margin: 30px auto 0;
+}
+
 /* NAVIGATION */
 nav {
   /* grid-column: 1 / -1; */
   text-align: right;
   font-size: 16pt;
-  background: #F2B90F;
+  background: #4F8C86;
   color: #1E1E1E;
   line-height: 1em;
 }
 
-nav a {
+section a, nav a {
   color: #1E1E1E;
   text-decoration: none;
 }
 
 nav a {
   display: block;
-  padding: 15px 20px;
+  padding: 15px 15px;
+}
+
+section:hover {
+  background-color: #F3F3F3;
 }
 
 nav li:hover {
@@ -77,28 +91,26 @@ h1 {
   /* text-align: center; */
   font-size: 1.8em;
   /* grid-column: 1 / -1; */
-  padding: 12pt 20px;
+  padding: 12pt 10px;
 }
 
 h3 {
-  color: #1E1E1E;
-  font-size: .8em;
+  font-size: .7em;
   font-variant: small-caps;
   margin-top: 1em;
-  margin: 0 20px;
+  margin: 0 10px;
   display: inline-block;
 }
 
 h2 {
-  color: #1E1E1E;
-  font-size: 1.5em;
+  font-size: 1.3em;
   line-height: 1.5em;
-  padding: .3em 20px;
+  padding: .3em 10px;
 }
 
 p {
   line-height: 1.7em;
-  padding: 0 20px 1.5em;
+  padding: 0 10px 1.5em;
 }
 
 .image-credit {
@@ -140,34 +152,28 @@ p {
 }
 
 
-@media all and (min-width: 450px) {
+@media all and (min-width: 425px) {
 
   .container {
     display: grid;
     margin: auto;
     width: 100vw;
-    grid-template-columns: 30px auto auto 30px;
-    grid-template-rows: auto auto auto auto 50px;
+    grid-template-columns: 50px auto auto 50px;
   }
 
-
-    nav li {
-      display: inline-block;
-      padding: 20px;
-    }
-
-  .banner {
-    display: block;
+  nav {
     grid-column: 1 / -1;
-    grid-row: 2 / span 1;
-
   }
 
-  .banner img {
-    margin: auto;
-    max-width: 100%;
-    overflow: hidden;
+  nav li {
+    display: inline-block;
+    padding: 20px;
   }
+
+  .collection {
+    grid-column: 2 / -2;
+  }
+
 
   .book-cover {
     max-width: 47%;
