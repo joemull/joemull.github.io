@@ -24,16 +24,24 @@
       <!-- TODO: Fix this so that the image only loads in CSS in tablet view -->
       <!-- http://hdl.handle.net/10934/RM0001.COLLECT.114390 -->
     <!-- </div> -->
-    <main>
-      <p>Prefer to email me? My address is jhmuller@umich.edu.</p>
-      <form class="" action="index.html" method="post">
+    <main class='contact'>
+      <!-- <p>Prefer to email me? My address is jhmuller@umich.edu.</p> -->
+      <!-- <form action="https://formspree.io/myyykyqg" method="POST">
+        <input type="text" name="name">
+        <input type="email" name="_replyto">
+        <input type="submit" value="Send">
+      </form> -->
+      <h1>Contact</h1>
+      <form name="Contact" action="https://formspree.io/myyykyqg" method="post">
         <fieldset>
-          <legend><h1>Contact</h1></legend>
-          First name
-          Last name
-          Email
-          Message
-          Submit
+          <legend>Contact</legend>
+          <label for='name'>Name:</label>
+          <input type='text' id='name' name='name'><br>
+          <label for='email'>Email:</label>
+          <input type='email' id='email' name='replyto'><br>
+          <label for='message'>Message:</label>
+          <textarea type='text' id='message' name='message'></textarea><br>
+          <button type='submit'>Submit</button>
         </fieldset>
       </form>
     </main>
