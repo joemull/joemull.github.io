@@ -8,12 +8,13 @@
     <link href="css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- skip link -->
-    <h1><a href='index.html'>Joseph Muller</a></h1>
     <nav>
       <ul>
+        <li><a href='index.html'><h1>Joseph Muller</h1></a></li>
         <li><a href="index.html">Bio</a></li>
         <!-- <li>Editorial Work</li>
         <li>Digital Curation</li> -->
@@ -27,20 +28,29 @@
       <!-- http://hdl.handle.net/10934/RM0001.COLLECT.114390 -->
     <!-- </div> -->
     <main class="container">
-      <h2>Contact</h2>
       <form name="Contact" action="https://formspree.io/myyykyqg" method="post">
         <fieldset>
-          <legend>Contact</legend>
-          <label for='name'>Name:</label>
+          <div class='legend'><legend><h2>Contact</h2></legend></div>
+          <div class='label'><label for='name'>name</label></div>
           <input type='text' id='name' name='name'><br>
-          <label for='email'>Email:</label>
+          <div class='label'><label for='email'>email address</label></div>
           <input type='email' id='email' name='replyto'><br>
-          <label for='message'>Message:</label>
+          <div class='label'><label class ='textarea' for='message'>message</label></div>
           <textarea type='text' id='message' name='message'></textarea><br>
-          <button type='submit'>Submit</button>
+          <div class='send'><button type='submit'>Send</button></div>
         </fieldset>
       </form>
     </main>
-    <!-- TODO: credit Harvard Library Brand Guidelines -->
+    <footer>
+      <!-- <p>Joseph Muller</p> -->
+      <div class="social">
+        <a href="https://www.linkedin.com/in/jhmuller/"><img src="images/other/LI-In-Bug.png" alt="View my LinkedIn profile"></a>
+        <a href="https://twitter.com/jhmuller20"><img src="images/other/Twitter_Social_Icon_Circle_Color.png" alt="View my Twitter profile"></a>
+      </div>
+      <div class="credits">
+        <p>This website was designed with inspiration from <a href="https://library.harvard.edu/brand-guidelines">Harvard Library</a>.</p>
+      </div>
+      <div class='cc'><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="images/other/cc-by.png" /></a><p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p></div>
+    </footer>
   </body>
 </html>
