@@ -133,6 +133,10 @@ p {
   font-size: .7em;
 }
 
+.story {
+  padding-bottom: 30px;
+}
+
 .story-lead {
   padding-bottom: 0;
   margin-bottom: 1.5em;
