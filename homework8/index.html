@@ -19,8 +19,8 @@
     <input type = "color" id = "picker"/>
 		<script type="text/javascript">
 
-
 			var c = document.querySelector("#myCanvas");
+			var picker = document.querySelector("#picker")
 
 			var cWidth = .80 * window.innerWidth;
 			var cHeight = .80 * window.innerHeight;
@@ -39,7 +39,7 @@
 				// Read about this solution from Bhawna Agarwal on Slack
 				if (flag == 0) {
 					ctx.fill();
-				} 
+				}
 			}
 
 
@@ -75,6 +75,13 @@
 
 				}
 			)
+
+			picker.addEventListener(
+				'input', function() {
+					ctx.fillStyle = picker.value;					
+				}
+			)
+
 
 		</script>
 </body>
