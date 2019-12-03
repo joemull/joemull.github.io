@@ -53,7 +53,7 @@
 ## Radio button consistency
 * The first radio button in the second map lacks a consistent structure as defined by ARIA
 
-# publishing.umich.edu/our-mission
+# `publishing.umich.edu/our-mission`
 
 ## Contrast errors
 * same as above
@@ -64,7 +64,7 @@
 ## Landmarks
 * Same doubling
 
-# publishing.umich.edu/stories-of-impact
+# `publishing.umich.edu/stories-of-impact`
 
 ## Contrast
 * Element has insufficient color contrast of 2.05 (foreground color: #b4b4b5, background color: #fefefe, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1
@@ -78,7 +78,7 @@
 ## Landmarks
 * Double headers
 
-# publishing.umich.edu/search
+# `publishing.umich.edu/search`
 
 ## Contrast
 * Same colors
