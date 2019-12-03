@@ -178,7 +178,6 @@ ements
 	- map background - #E8E8E8
 	-  blue marker - #008CFF, contrast ratio of 2.76:1
 	- yellow marker - #F2B705, contrast ratio of 1.48:1
-
 - Adjust text size in noted places.
 - Create styling for the search bar so that the HTML element doesn't need to be in tabular format.
 - Turn off autoplay, allowing users to control when videos (or animated images longer than 5 seconds) start and stop.
