@@ -30,7 +30,9 @@
 ## Contrast (17)
 * Element has insufficient color contrast of 4.46 (foreground color: #1e80a2, background color: #fefefe, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1
 * Text within Google Maps iframe
-* Blue and yellow markers on second map
+* Blue and yellow markers on second map with background #E8E8E8
+  * Blue marker: #008CFF - contrast ratio 2.76:1 - WCAG AA Fail
+  * Yellow marker: #F2B705 - contrast ratio 1.48:1 - WCAG AA Fail
 
 ## Alt text (4)
 * Zoom buttons
