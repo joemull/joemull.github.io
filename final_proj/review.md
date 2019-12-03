@@ -175,9 +175,9 @@ ements
 ## CSS / Design
 - Adjust coloring contrast issues for linked text and stylized quotation marks (you can use [wave.webaim.org](https://wave.webaim.org) to determine when the color contrast is AA-approved.
 - For the map markers, you have to checking contrast manually. You can get hex codes from foreground and background images in Photoshop (or by uploading them to color.adobe.com) and plug those codes into the WebAIM Contrast Checker. WCAG AA calls for a contrast of at least 3:1 for graphics. Current colors:
-	- map background -  #E8E8E8.
-	-  blue marker -is #008CFF, with a contrast ratio of 2.76:1
-	- yellow marker -is #F2B705, with a contrast ratio of 1.48:1.
+	- map background - #E8E8E8
+	-  blue marker - #008CFF, contrast ratio of 2.76:1
+	- yellow marker - #F2B705, contrast ratio of 1.48:1
 
 - Adjust text size in noted places.
 - Create styling for the search bar so that the HTML element doesn't need to be in tabular format.
