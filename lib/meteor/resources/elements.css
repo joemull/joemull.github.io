@@ -1,0 +1,62 @@
+body {
+  /* User color scheme preference */
+  color: var(--clr-foreground);
+  background-color: var(--clr-background);
+  font-family: var(--ff-source-sans);
+  overflow-x: hidden;
+}
+article {
+  padding-block: var(--space-xl);
+}
+h1 {
+  font-size: var(--step-8);
+  font-weight: normal;
+  font-family: var(--ff-smythe);
+  letter-spacing: 1px;
+  line-height: 1.1;
+  --flow-space: var(--space-xl);
+}
+h2 {
+  font-size: var(--step-6);
+  font-weight: medium;
+  font-family: var(--ff-smythe);
+  letter-spacing: 1px;
+  --flow-space: var(--space-l);
+}
+h3 {
+  font-size: var(--step-3);
+  --flow-space: var(--space-m);
+}
+h4 {
+  font-size: var(--step-3);
+  --flow-space: var(--space-m);
+}
+h5 {
+  font-size: var(--step-3);
+  --flow-space: var(--space-m);
+}
+h6 {
+  font-size: var(--step-3);
+  --flow-space: var(--space-m);
+}
+p {
+  font-size: var(--step-3);
+  --flow-space: var(--space-s);
+}
+li {
+  font-size: var(--step-3);
+  --flow-space: var(--space-s);
+}
+a:focus-visible {
+  outline-width: 4px;
+  outline-color: var(--clr-accent);
+  outline-style: solid;
+  outline-offset: 0.25rem;
+}
+code {
+  font-size: var(--step-2);
+  background: var(--clr-alt-background);
+  font-size: var(--step-2);
+  font-family: var(--ff-mono);
+  position: relative;
+}
