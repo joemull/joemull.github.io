@@ -1,0 +1,16 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "prettier": "^3.6.2",
+        "prettier-plugin-jinja-template": "^2.1.0",
+      },
+    },
+  },
+  "packages": {
+    "prettier": ["prettier@3.6.2", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ=="],
+
+    "prettier-plugin-jinja-template": ["prettier-plugin-jinja-template@2.1.0", "", { "peerDependencies": { "prettier": "^3.0.0" } }, "sha512-mzoCp2Oy9BDSug80fw3B3J4n4KQj1hRvoQOL1akqcDKBb5nvYxrik9zUEDs4AEJ6nK7QDTGoH0y9rx7AlnQ78Q=="],
+  }
+}

@@ -1,2 +1,7 @@
-/venv/
+*--draft.md
 /out/
+
+/node_modules/
+**/__pycache__
+.pytest_cache
+/.venv/

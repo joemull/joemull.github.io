@@ -7,20 +7,23 @@
 
 # Choose the theme to use when building your site. This variable should specify
 # the name of a theme directory in your site's 'lib' folder.
-theme = "canary"
+theme = "meteor"
 
 # Site title.
-title = "Joseph Muller"
+title = "Joe Muller"
 
 # Site tagline.
-tagline = "I write about tech and humanities and other things"
+# tagline = ""
+
+# Default author
+default_author = "Joe Muller"
 
 # Language
-lang = 'en-US'
+lang = "en-US"
 
 # Extensions
 extensions = [
-    'holly',
+    "holly",
 ]
 
 # Blog extension
@@ -30,5 +33,11 @@ holly = {
     ],
     "homepage": {
         "root_urls": ["@root/blog//"],
-    }
+    },
+}
+
+# Jinja settings
+jinja_settings = {
+    "trim_blocks": True,
+    "lstrip_blocks": True,
 }
