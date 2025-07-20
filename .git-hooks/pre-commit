@@ -7,6 +7,15 @@ cd "$PROJECT_ROOT" || exit 1
 STAGED_PYTHON_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.py$')
 STAGED_PRETTIER_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -e '\.md$' -e '\.jinja$' -e '\.html$' -e '\.css$')
 
+echo "Running tests..."
+pytest
+FORMAT_EXIT_CODE=$?
+if [ $FORMAT_EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "Commit aborted."
+  exit 1
+fi
+
 if [ "$STAGED_PYTHON_FILES" ]; then
   echo "Checking formatting with Ruff for staged Python files..."
   ruff format --check $STAGED_PYTHON_FILES
