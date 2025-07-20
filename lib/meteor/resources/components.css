@@ -79,7 +79,10 @@
 }
 
 .site-footer {
-  .links > * {
+  .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     gap: var(--space-s);
     font-size: var(--step-3);

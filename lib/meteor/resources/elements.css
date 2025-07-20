@@ -42,6 +42,10 @@ h6 {
 p {
   font-size: var(--step-3);
   --flow-space: var(--space-s);
+  svg {
+    display: inline;
+    vertical-align: top;
+  }
 }
 li {
   font-size: var(--step-3);

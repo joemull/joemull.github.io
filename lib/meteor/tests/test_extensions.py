@@ -46,14 +46,14 @@ def test_filter_drafts(monkeypatch):
 
 
 def test_icon():
-    from lib.meteor.extensions import meteor_jinja
+    from lib.meteor.extensions import renderer
 
-    icon = meteor_jinja.icon("cat", "Cat icon")
+    icon = renderer.icon("cat", "Cat icon")
     assert icon.startswith("<svg")
 
 
 def test_prerender_jinja():
-    ark.extensions.load_module(extensions, "meteor_jinja")
+    ark.extensions.load_module(extensions, "renderer")
     ark.events.fire(ark.events.Event.INIT)
     result = ark.filters.apply("node_text", "{{ 'jinja' }}", None)
     assert result == "jinja"

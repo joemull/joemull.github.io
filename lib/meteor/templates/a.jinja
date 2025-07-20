@@ -1,0 +1,21 @@
+{% from "components.jinja" import icon %}
+
+<a
+  {% if is_external %}
+    class="inline-flex current-color"
+  {% endif %}
+  href="{{ url }}"
+  {% if is_external %}
+    target="_blank"
+  {% endif %}
+  {{ title|default("") }}
+>
+  <span>{{ body }}</span>
+  {%- if is_external -%}
+    {%- if external_icon -%}
+      {{- icon("external-link", "Opens in new tab") -}}
+    {%- else -%}
+      <span class="sr-only"> (opens in new tab)</span>
+    {%- endif -%}
+  {%- endif -%}
+</a>

@@ -51,6 +51,9 @@
 .bg-rust {
   background-color: var(--clr-rust);
 }
+.current-color {
+  color: currentColor;
+}
 
 /* Font families */
 .ff-source-sans {
@@ -157,10 +160,20 @@
     }
   }
 }
+.inline-flex {
+  display: inline-flex;
+  gap: var(--gap, 0.25rem);
+}
 
 /* Set the gap */
 .gap-0 {
   gap: 0rem;
+}
+.gap-0-25 {
+  gap: 0.25rem;
+}
+.gap-0-5 {
+  gap: 0.5rem;
 }
 .gap-1 {
   gap: 1rem;
