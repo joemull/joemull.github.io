@@ -1,9 +1,10 @@
 {% from "components.jinja" import icon %}
 
 <a
-  {% if is_external %}
-    class="inline-flex current-color"
-  {% endif %}
+  class="
+    break-word current-color
+    {% if is_external %}inline-flex{% endif %}
+  "
   href="{{ url }}"
   {% if is_external %}
     target="_blank"

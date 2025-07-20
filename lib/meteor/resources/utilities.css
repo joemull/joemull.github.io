@@ -213,3 +213,8 @@
   white-space: nowrap; /* added line */
   border: 0;
 }
+
+/* Line breaks */
+.break-word {
+  word-break: break-word;
+}
