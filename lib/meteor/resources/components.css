@@ -17,7 +17,7 @@
   }
 
   nav ul {
-    font-size: var(--step-3);
+    font-size: var(--step-4);
     display: flex;
     list-style: none;
     margin-block-start: 0;
@@ -81,7 +81,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-m);
-    font-size: var(--step-3);
+    font-size: var(--step-4);
     color: var(--clr-accent);
     justify-content: center;
     align-items: center;
@@ -136,7 +136,7 @@ p code {
 .paging {
   display: flex;
   align-items: center;
-  font-size: var(--step-3);
+  font-size: var(--step-4);
   .prev,
   .next {
     color: var(--clr-accent);
@@ -167,8 +167,8 @@ p code {
     content: "";
     display: block;
     margin-block-start: var(--space-l);
-    width: var(--step-2);
-    height: var(--step-2);
+    width: var(--step-3);
+    height: var(--step-3);
     clip-path: polygon(0 50%, 80% 0, 100% 100%, 20% 90%);
     background: var(--clr-accent);
   }
