@@ -170,7 +170,7 @@ p code {
     position: relative;
   }
 
-  &:before {
+  &::before {
     content: "";
     display: block;
     margin-block-start: var(--space-l);
@@ -178,5 +178,12 @@ p code {
     height: var(--step-2);
     clip-path: polygon(0 50%, 80% 0, 100% 100%, 20% 90%);
     background: var(--clr-accent);
+  }
+}
+
+/* View transitions */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
   }
 }

@@ -74,16 +74,23 @@
       <main>
         <article class="prose flow">
           {% if node.is_tag_index %}
-            <h1>Tag: {{ node.title }}</h1>
+            <h1 style="view-transition-name: {{ node.slug }}-title">
+              Tag: {{ node.title }}
+            </h1>
           {% else %}
-            <h1>{{ node.title }}</h1>
+            <h1 style="view-transition-name: {{ node.slug }}-title">
+              {{ node.title }}
+            </h1>
           {% endif %}
           {% if node.subtitle %}
             {{ node.subtitle }}
           {% endif %}
           {% if node.date %}
             <div class="fs-2 ff-mono">
-              <time datetime="{{ node.date }}">
+              <time
+                style="view-transition-name: {{ node.slug }}-date"
+                datetime="{{ node.date }}"
+              >
                 {{ node.date.strftime('%d %B %Y') }}
               </time>
             </div>
@@ -103,12 +110,15 @@
             {% for entry in node.index %}
               <div class="article-in-list">
                 <div class="article-details flow flow-first-child">
-                  <h2>
+                  <h2 style="view-transition-name: {{ entry.slug }}-title">
                     <a href="{{ entry.url }}"> {{ entry.title }} </a>
                   </h2>
                   {% if entry.date %}
                     <div class="fs-2 ff-mono">
-                      <time datetime="{{ entry.date }}">
+                      <time
+                        style="view-transition-name: {{ entry.slug }}-date"
+                        datetime="{{ entry.date }}"
+                      >
                         {{ entry.date.strftime('%d %B %Y') }}
                       </time>
                     </div>

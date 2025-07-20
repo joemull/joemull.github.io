@@ -5,7 +5,7 @@ date: 2023-07-20
 
 {% from "components.jinja" import icon %}
 
-<div class="flex">
+<div class="flex wrap">
   <img style="width: 8rem;" src="@root/images/Word-icon.svg" alt="Microsoft Word icon">
   <img style="width: 8rem;" src="@root/images/Git-Icon-1788C.svg" alt="Git icon">
   <img style="width: 8rem;" src="@root/images/Octicons-mark-github.svg" alt="GitHub icon">
