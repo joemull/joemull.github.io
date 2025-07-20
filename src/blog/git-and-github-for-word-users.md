@@ -1,5 +1,5 @@
 ---
-title: GitHub for Word users
+title: Git and GitHub for Word users
 date: 2023-07-20
 ---
 
@@ -7,7 +7,8 @@ date: 2023-07-20
 
 <div class="flex">
   <img style="width: 8rem;" src="@root/images/Word-icon.svg" alt="Microsoft Word icon">
-  <img style="width: 8rem;" src="@root/images/Octicons-mark-github.svg" alt="GitHub logo">
+  <img style="width: 8rem;" src="@root/images/Git-Icon-1788C.svg" alt="Git icon">
+  <img style="width: 8rem;" src="@root/images/Octicons-mark-github.svg" alt="GitHub icon">
 </div>
 
 Many people working in academic libraries and university presses find themselves adjacent to both tech and the academic humanities. In particular, they may work closely with a team that uses Git and GitHub to manage projects that include text in English or another human language.
