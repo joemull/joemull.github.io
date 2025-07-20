@@ -14,6 +14,12 @@
         {{- site.title -}}
       {% endif %}
     </title>
+    <style>
+      /* Avoid light flash if coming from dark-background site */
+      body {
+        background: #262522;
+      }
+    </style>
     <link
       rel="preload"
       href="@root/fonts/source-sans/SourceSans3-VariableFont_wght.ttf"
