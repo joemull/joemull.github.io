@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<svg
+  width="16"
+  height="16"
+  xmlns="http://www.w3.org/2000/svg">
+  <style>
+    #diamond-favicon {
+      clip-path: polygon(0 50%, 80% 0, 100% 100%, 20% 90%);
+    }
+    @media (prefers-color-scheme: dark) {
+      rect {
+        fill: #d9a74e;
+      }
+    }
+    @media (prefers-color-scheme: light) {
+      rect {
+        fill: #915f06;
+      }
+    }
+  </style>
+  <rect
+    id="diamond-favicon"
+    fill="currentColor"
+    height="16"
+    width="16"
+  />
+</svg>
