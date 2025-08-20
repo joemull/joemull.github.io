@@ -57,3 +57,23 @@ def test_prerender_jinja():
     ark.events.fire(ark.events.Event.INIT)
     result = ark.filters.apply("node_text", "{{ 'jinja' }}", None)
     assert result == "jinja"
+
+
+def test_render_link_internal():
+    ark.extensions.load_module(extensions, "renderer")
+    ark.events.fire(ark.events.Event.INIT)
+    text = "[My link](/path/to/link)"
+    result = ark.renderers.render(text, "md")
+    assert "<a" in result
+    assert "<svg" not in result
+    assert "opens in new tab" not in result
+
+
+def test_render_link_external():
+    ark.extensions.load_module(extensions, "renderer")
+    ark.events.fire(ark.events.Event.INIT)
+    text = "[My link](https://www.example.org/path/to/link)"
+    result = ark.renderers.render(text, "md")
+    assert "<a" in result
+    assert "<svg" in result
+    assert "opens in new tab" in result
