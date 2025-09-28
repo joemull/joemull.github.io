@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 import ark
@@ -16,7 +17,7 @@ def test_format_html():
     from lib.meteor.extensions import minify_event
 
     result = minify_event.format_html('<p  class=" crispy">apple</p>\n <p>pear</p>')
-    assert result == "<p class=crispy>apple<p>pear"
+    assert result == "<p class=crispy>apple</p><p>pear</p>"
 
 
 def test_format_css():

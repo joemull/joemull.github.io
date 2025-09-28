@@ -14,7 +14,11 @@ def format_html(html):
     if DEBUG:
         return html
     else:
-        return minify(html)
+        return minify(
+            html,
+            keep_html_and_head_opening_tags=True,
+            keep_closing_tags=True,
+        )
 
 
 def format_css(css):
