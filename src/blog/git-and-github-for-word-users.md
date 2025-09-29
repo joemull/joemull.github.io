@@ -69,21 +69,11 @@ With caveats out of the way, the main thing to remember about this layer is that
 
 Finally there’s the lowest layer, binary code.
 
-<figure>
-  <img
-    src="@root/images/Wikipedia-in-binary.gif"
-    alt="The word Wikipedia in binary code">
-  <caption>
-    “Wikipedia in binary,” Atyndall, 
-    <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">
-      CC BY-ND 3.0
-    </a>
-  </caption>
-</figure>
+![A sample of hexadecimal code from a Word file](@root/images/hexadecimal-binary-sample.png)
 
-This is really only legible by computers. It does contain the parts of the file that are “for people,” but they’ve been translated into ones and zeros.
+This is really only legible by computers. It does contain the parts of the file that are “for people,” but each letter has been translated into ones and zeros and then compressed into an alphanumeric shorthand for sequences of ones and zeros.
 
-You don’t need to worry about the binary layer unless you’re Keanu Reeves.
+You don’t need to worry about the binary layer unless you’re Keanu Reeves, or a computer scientist.
 
 ## Word actions compared to Git and GitHub actions
 

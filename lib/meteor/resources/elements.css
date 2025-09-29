@@ -40,6 +40,7 @@ h6 {
   --flow-space: var(--space-m);
 }
 p {
+  text-wrap: pretty;
   font-size: var(--step-4);
   --flow-space: var(--space-s);
   svg {

@@ -1,17 +1,18 @@
 {% from "components.jinja" import icon %}
 
 <a
-  class="
-    break-word current-color
-    {% if is_external %}inline-flex{% endif %}
-  "
+  class="external-link"
   href="{{ url }}"
   {% if is_external %}
     target="_blank"
   {% endif %}
   {{ title|default("") }}
 >
-  <span>{{ body }}</span>
+  {%- if "https://" in body -%}
+    <span class="legible-link">{{ body }}</span>
+  {%- else -%}
+    <span>{{ body }}</span>
+  {%- endif %}
   {%- if is_external -%}
     {%- if external_icon -%}
       {{- icon("external-link", "opens in new tab") -}}

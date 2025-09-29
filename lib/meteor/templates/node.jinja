@@ -5,6 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <title>
       {%- if node.is_tag_index %}Tag:{% endif -%}
       {% if node.meta_title or node.title %}
@@ -14,12 +15,6 @@
         {{- site.title -}}
       {% endif %}
     </title>
-    <style>
-      /* Avoid light flash if coming from dark-background site */
-      body {
-        background: #262522;
-      }
-    </style>
     <link
       rel="preload"
       href="@root/fonts/source-sans/SourceSans3-VariableFont_wght.ttf"
@@ -109,7 +104,7 @@
           {% if node.is_dir_index or node.is_homepage_index %}
             {% for entry in node.index %}
               <div class="article-in-list">
-                <div class="article-details flow flow-first-child">
+                <div class="flow flow-first-child">
                   <h2
                     style="view-transition-name: {{ vt_name(entry, "title") }};"
                   >

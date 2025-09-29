@@ -83,7 +83,7 @@ Albadarin, Yazid, Mohammed Saqr, Nicolas Pope, and Markku Tukiainen. “A System
 
 Becker, Brett A., Paul Denny, James Finnie-Ansley, Andrew Luxton-Reilly, James Prather, and Eddie Antonio Santos. “Programming Is Hard - Or at Least It Used to Be: Educational Opportunities and Challenges of AI Code Generation.” In Proceedings of the 54th ACM Technical Symposium on Computer Science Education V. 1, 500–506. SIGCSE 2023. New York, NY, USA: Association for Computing Machinery, 2023. https://doi.org/10.1145/3545945.3569759.
 
-Bente, Stefan, Natasha Randall, and Dennis Wäckerle. “A Conceptual Framework to Transform Coding Education in Times of Generative AI,” 93–104. Gesellschaft für Informatik e.V., 2024. https://dl.gi.de/handle/20.500.12116/43794.
+Bente, Stefan, Natasha Randall, and Dennis Wäckerle. “A Conceptual Framework to Transform Coding Education in Times of Generative AI,” 93–104. Gesellschaft für Informatik e.V., 2024. https://doi.org/10.18420/seuh2024_08.
 
 Cambaz, Doga, and Xiaoling Zhang. “Use of AI-Driven Code Generation Models in Teaching and Learning Programming: A Systematic Literature Review.” In Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1, 172–78. SIGCSE 2024. New York, NY, USA: Association for Computing Machinery, 2024. https://doi.org/10.1145/3626252.3630958.
 

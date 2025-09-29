@@ -23,6 +23,8 @@
 
 /* Custom properties */
 :root {
+  color-scheme: light dark;
+
   /* Concrete colours */
   --clr-black: #262522;
   --clr-deep-black: #1d1d1d;

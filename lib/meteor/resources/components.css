@@ -132,6 +132,14 @@ p code {
   padding-block: 0.25rem;
 }
 
+/* Figures */
+.prose p:has(img) {
+  max-width: none;
+  img {
+    max-width: min(48rem, 90vw);
+  }
+}
+
 /* Paging */
 .paging {
   display: flex;
@@ -171,6 +179,7 @@ p code {
     height: var(--step-3);
     clip-path: polygon(0 50%, 80% 0, 100% 100%, 20% 90%);
     background: var(--clr-accent);
+    flex-shrink: 0;
   }
 }
 
@@ -179,4 +188,16 @@ p code {
   @view-transition {
     navigation: auto;
   }
+}
+
+/* External link */
+.external-link {
+  word-break: break-word;
+  color: currentColor;
+  .legible-link {
+    word-break: break-all;
+  }
+}
+.links .external-link {
+  display: inline-flex;
 }
