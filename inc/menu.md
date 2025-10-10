@@ -1,2 +1,4 @@
-- [Blog](@root/)
+- [Home](@root/)
+- [Blog](@root/blog//)
+- [Slides](@root/slides//)
 - [About](@root/about//)

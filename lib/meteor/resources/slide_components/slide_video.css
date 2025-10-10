@@ -1,0 +1,6 @@
+.slide-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--slide-height-below-h2);
+}

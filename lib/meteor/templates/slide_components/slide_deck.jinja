@@ -1,0 +1,169 @@
+{% from "components/icon_tabler.jinja" import icon_tabler %}
+{% from "components/vt_name.jinja" import vt_name %}
+{% from "components/node_date.jinja" import node_date %}
+{% from "slide_components/slide_frame.jinja" import slide_frame %}
+{% from "slide_components/slide_text.jinja" import slide_text %}
+{% from "slide_components/slide_title.jinja" import slide_title %}
+
+<div class="slide-deck">
+  <header class="header">
+    <nav>
+      <ul role="list">
+        <li>
+          <button type="button" name="print" value="print" class="nav-link">
+            {{ icon_tabler("file-type-pdf", "PDF") }}
+          </button>
+        </li>
+        <li>
+          <a href="@root/slides//" class="nav-link">
+            {{ icon_tabler("x", "Close slide show") }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main
+    class="content"
+    style="view-transition-name: {{ vt_name(node, "slide_deck") }};"
+  >
+    {% call slide_frame() %}
+      <dialog open class="small-screen-help-text flow">
+        <p>
+          It looks like you're on a small screen. For best display, please
+          download the PDF or switch to a larger screen.
+        </p>
+        <form method="dialog">
+          <button autofocus>OK</button>
+        </form>
+      </dialog>
+      {% call slide_title() %}
+        <h1 style="view-transition-name: {{ vt_name(node, "title") }};">
+          {{ node.title }}
+        </h1>
+        {{ node_date(node) }}
+        {% set url_for_print_display = site.homepage + "/".join(node.path) + site.file_extension %}
+        <div class="footnote">
+          <p class="first-slide-html-link">
+            <a href="{{ url_for_print_display }}">
+              {{ url_for_print_display }}
+            </a>
+          </p>
+          {{ inc.birkbeck_licensing }}
+        </div>
+      {% endcall %}
+    {% endcall %}
+    {{ node.html }}
+  </main>
+  <footer class="footer">
+    <nav>
+      <ul role="list">
+        <li>
+          <button
+            type="button"
+            name="change-slide"
+            value="previous"
+            class="nav-link"
+          >
+            {{ icon_tabler("caret-left", "Previous slide") }}
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            name="change-slide"
+            value="next"
+            class="nav-link"
+          >
+            {{ icon_tabler("caret-right", "Next slide") }}
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+<script type="module">
+  const buttonPrint = document.querySelector(
+    `.slide-deck .nav-link[value="print"]`,
+  );
+  const aClose = document.querySelector(
+    `.slide-deck .nav-link[href$="slides.html"]`,
+  );
+  const buttonLeft = document.querySelector(
+    `.slide-deck .nav-link[value="previous"]`,
+  );
+  const buttonRight = document.querySelector(
+    `.slide-deck .nav-link[value="next"]`,
+  );
+  function getSlideIndex() {
+    const params = new URLSearchParams(window.location.search);
+    return Number(params?.get("slide") || 1) - 1;
+  }
+  let slideIndex = getSlideIndex();
+
+  const slideFrames = Array.from(
+    document.querySelectorAll(".slide-deck .content > *"),
+  );
+  function changeSlide(i) {
+    if (0 <= i && i < slideFrames.length) {
+      for (const slide of slideFrames) {
+        slide.classList.toggle("displayed", false);
+      }
+      slideFrames[i].classList.toggle("displayed", true);
+      const url = new URL(window.location);
+      url.searchParams.set("slide", i + 1);
+      history.pushState({}, "", url.toString());
+    }
+  }
+  changeSlide(slideIndex);
+
+  const headerUl = document.querySelector(".header ul");
+  headerUl.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (button) {
+      if (button.value === "print") {
+        print();
+      }
+    }
+  });
+
+  const footerUl = document.querySelector(".footer ul");
+  footerUl.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (button) {
+      if (button.value === "previous") {
+        slideIndex = getSlideIndex() - 1;
+      } else if (button.value === "next") {
+        slideIndex = getSlideIndex() + 1;
+      }
+      changeSlide(slideIndex);
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Print") {
+      buttonPrint.classList.toggle("active", true);
+    } else if (e.key === "Escape") {
+      aClose.classList.toggle("active", true);
+    } else if (e.key === "ArrowLeft") {
+      buttonLeft.classList.toggle("active", true);
+      slideIndex = getSlideIndex() - 1;
+      changeSlide(slideIndex);
+    } else if (e.key === "ArrowRight" || e.key === " ") {
+      e.preventDefault();
+      buttonRight.classList.toggle("active", true);
+      slideIndex = getSlideIndex() + 1;
+      changeSlide(slideIndex);
+    }
+  });
+  document.addEventListener("keyup", (e) => {
+    if (e.key === "Print") {
+      print();
+    } else if (e.key === "Escape") {
+      window.location.assign("@root/slides//");
+    } else if (e.key === "ArrowLeft") {
+      buttonLeft.classList.toggle("active", false);
+    } else if (e.key === "ArrowRight" || e.key === " ") {
+      buttonRight.classList.toggle("active", false);
+    }
+  });
+</script>

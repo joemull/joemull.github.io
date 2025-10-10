@@ -1,0 +1,34 @@
+{% from "slide_components/slide_columns.jinja" import slide_columns %}
+{% from "slide_components/slide_frame.jinja" import slide_frame %}
+<!-- prettier-ignore-start -->
+{% macro slide_render_markup(input_heading="Markdown", language="markdown") -%}
+{%- set outer_caller = caller() -%}
+{%- set h2, rest = outer_caller|h2_and_rest -%}
+{%- call slide_frame() -%}
+
+{{ h2 }}
+
+{% set column1 -%}
+
+### {{ input_heading or language.capitalize() }}
+
+```{{ language }}
+{{ rest }}
+```
+
+{%- endset -%}
+{%- set column2 -%}
+
+<h3>Output</h3>
+
+<output class="flow">
+
+{{ rest }}
+
+</output>
+
+{%- endset -%}
+{{- slide_columns(column1, column2) -}}
+{%- endcall -%}
+{%- endmacro %}
+<!-- prettier-ignore-end -->

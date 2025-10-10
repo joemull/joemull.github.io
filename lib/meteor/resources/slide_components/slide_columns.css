@@ -1,0 +1,10 @@
+.slide-columns {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 4%;
+  pre,
+  code,
+  output {
+    height: var(--column-height-below-h3);
+  }
+}

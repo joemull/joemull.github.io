@@ -1,0 +1,13 @@
+{% from "slide_components/slide_frame.jinja" import slide_frame %}
+<!-- prettier-ignore-start -->
+{% macro slide_text() -%}
+{%- set outer_caller = caller() -%}
+{%- call slide_frame() -%}
+<section class="slide-text flow">
+
+{{ outer_caller }}
+
+</section>
+{%- endcall -%}
+{%- endmacro %}
+<!-- prettier-ignore-end -->

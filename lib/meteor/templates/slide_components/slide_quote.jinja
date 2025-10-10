@@ -1,0 +1,23 @@
+{% from "slide_components/slide_frame.jinja" import slide_frame %}
+<!-- prettier-ignore-start -->
+{% macro slide_quote(citation="", url="") -%}
+{% set outer_caller = caller() %}
+{% call slide_frame() %}
+
+<div class="slide-quote flow">
+<div class="prose flow">
+
+{{ outer_caller }}
+
+{% if url -%}
+<cite><a target="_blank" href="{{ url }}">{{ citation }}</a></cite>
+{%- else -%}
+<cite>{{- citation -}}</cite>
+{%- endif -%}
+
+</div>
+</div>
+
+{%- endcall -%}
+{%- endmacro %}
+<!-- prettier-ignore-end -->

@@ -1,0 +1,23 @@
+.slide-grid-four-images p:only-child {
+  --gap: var(--space-2xs);
+  --quadrant-height: calc(calc(var(--slide-height-below-h2) - var(--gap)) / 2);
+  --quadrant-width: calc(
+    calc(var(--a4-long-side) - calc(var(--slide-padding) * 2) - var(--gap)) / 2
+  );
+  margin-block: 0;
+  height: var(--slide-height-below-h2);
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(2, var(--quadrant-width));
+  grid-template-rows: repeat(2, var(--quadrant-height));
+  img {
+    height: var(--quadrant-height);
+    max-width: var(--quadrant-width);
+  }
+  img:nth-child(odd) {
+    justify-self: end;
+  }
+  img:nth-child(even) {
+    justify-self: start;
+  }
+}

@@ -1,0 +1,122 @@
+/* Slide deck */
+.slide-deck {
+  position: relative;
+  height: 100vh;
+  .header ul,
+  .footer ul {
+    z-index: 1;
+    right: 0;
+    position: absolute;
+    display: flex;
+    gap: var(--space-s);
+    margin: var(--space-xs);
+    line-height: var(--step-3);
+  }
+  .header ul {
+    top: 0;
+  }
+  .footer ul {
+    bottom: 0;
+  }
+  .header svg {
+    outline-width: 1px;
+    outline-color: var(--clr-foreground);
+    outline-style: solid;
+    outline-offset: 0.25rem;
+  }
+  .header .nav-link:focus-visible svg,
+  .header .nav-link:active svg,
+  .header .nav-link.active svg {
+    transform: scale(0.94);
+    outline-width: 4px;
+    outline-color: var(--clr-accent);
+  }
+
+  .nav-link {
+    color: currentColor;
+    background: inherit;
+    border: none;
+  }
+  .nav-link:hover {
+    cursor: pointer;
+  }
+  .nav-link a,
+  .nav-link svg {
+    display: block;
+    width: var(--step-8);
+    height: var(--step-8);
+  }
+
+  .footer .nav-link {
+    outline-width: 1px;
+    outline-color: var(--clr-foreground);
+    outline-style: solid;
+    outline-offset: 0.25rem;
+  }
+  .footer .nav-link:focus-visible,
+  .footer .nav-link:active,
+  .footer .nav-link.active {
+    transform: scale(0.94);
+    outline-width: 4px;
+    outline-color: var(--clr-accent);
+  }
+  .content {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+    flex-shrink: 1;
+  }
+
+  /* Modification of rendered-link */
+  .rendered-link svg {
+    display: none;
+  }
+  /* Modification of node-date */
+  .node-date {
+    font-size: var(--step-4);
+  }
+  @media screen {
+    background: radial-gradient(
+      farthest-corner at 100% 0%,
+      transparent 70%,
+      var(--clr-accent) 200%
+    );
+  }
+  .small-screen-help-text {
+    background: var(--clr-background);
+    max-width: 80vw;
+    z-index: 1;
+    margin-block: var(--space-s);
+  }
+  .small-screen-help-text button {
+    color: var(--clr-background);
+    background: var(--clr-foreground);
+    border-width: 0;
+    padding: 1rem;
+    margin-inline: auto;
+    display: block;
+  }
+  .small-screen-help-text,
+  .first-slide-html-link {
+    display: none;
+  }
+}
+
+@media screen and (width <= 297mm) {
+  .slide-deck dialog.small-screen-help-text[open] {
+    display: block;
+  }
+}
+@media print {
+  .slide-deck {
+    .first-slide-html-link {
+      display: block;
+    }
+    .header,
+    .footer {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{% from "slide_components/slide_frame.jinja" import slide_frame %}
+<!-- prettier-ignore-start -->
+{% macro slide_video(name, video_url, image_url) -%}
+{%- set outer_caller = caller() -%}
+{%- set h2, rest = outer_caller|h2_and_rest -%}
+{%- call slide_frame() -%}
+
+{{ h2 }}
+
+<div class="slide-video">
+  <a href="{{ video_url }}" target="_blank">
+    <img alt="{{ name }}" src="{{ image_url }}">
+  </a>
+</div>
+
+{%- endcall -%}
+{%- endmacro %}
+<!-- prettier-ignore-end -->

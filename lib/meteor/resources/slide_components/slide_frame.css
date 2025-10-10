@@ -1,0 +1,101 @@
+/* Slide frame */
+.slide-frame {
+  /* Font sizes and spaces for slides use absolute units (millimeters)
+   * since the layout is conceived as one landscape A4 page*/
+
+  /* Slide font sizes */
+  --step-1: 3mm;
+  --step-2: 4mm;
+  --step-3: 5mm;
+  --step-4: 6.5mm;
+  --step-5: 8mm;
+  --step-6: 10mm;
+  --step-7: 13mm;
+  --step-8: 16mm;
+  --step-9: 20mm;
+  --step-10: 25mm;
+  --step-11: 30mm;
+  --step-12: 40mm;
+  --step-13: 50rem;
+
+  /* Slide spaces */
+  --space-3xs: 2mm;
+  --space-2xs: 3mm;
+  --space-xs: 4mm;
+  --space-s: 6mm;
+  --space-m: 8mm;
+  --space-l: 10mm;
+  --space-xl: 16mm;
+  --space-2xl: 20mm;
+  --space-3xl: 30mm;
+
+  /* Abstract sizes and spaces */
+  --body-text-size: var(--step-3);
+  --flow-space: var(--space-xs);
+  --h1-size: var(--step-8);
+  --h2-size: var(--step-7);
+  --h3-size: var(--step-6);
+  --h4-size: var(--step-5);
+  --h5-size: var(--step-4);
+  --h6-size: var(--step-4);
+  --a4-short-side: 210mm;
+  --a4-long-side: 297mm;
+  --slide-padding: var(--space-2xl);
+  --slide-height-below-h2: calc(
+    var(--a4-short-side) - calc(var(--slide-padding) * 2) -
+      calc(var(--h2-size) * var(--shorter-line-height)) - var(--flow-space)
+  );
+  --column-height-below-h3: calc(
+    var(--slide-height-below-h2) -
+      calc(var(--h3-size) * var(--shorter-line-height)) - var(--flow-space)
+  );
+
+  height: var(--a4-short-side);
+  width: var(--a4-long-side);
+  padding: var(--slide-padding);
+  position: relative;
+  break-inside: avoid-page;
+
+  & > h2 + *:last-child {
+    height: var(--slide-height-below-h2);
+  }
+  &:not(.displayed) {
+    display: none;
+  }
+  :where(h2, h3, h4, h5, h6) {
+    text-wrap: nowrap;
+  }
+  .footnote {
+    --flow-space: var(--space-xl);
+  }
+  .footnote p {
+    max-width: 40rem;
+    font-size: var(--step-2);
+  }
+  .prose > * {
+    max-width: 40ch;
+  }
+  :where(pre, code, output) {
+    height: var(--slide-height-below-h2);
+  }
+  output h1 {
+    font-size: var(--step-6);
+  }
+  output h2 {
+    font-size: var(--step-5);
+  }
+  output :where(h3, h4, h5, h6) {
+    font-size: var(--step-4);
+  }
+}
+
+@page {
+  size: a4 landscape;
+  margin: 0;
+}
+
+@media print {
+  .slide-frame:not(.displayed) {
+    display: block;
+  }
+}

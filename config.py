@@ -2,6 +2,8 @@
 #  Site Configuration File  #
 # ------------------------- #
 
+import os
+
 # Variables set here will be available in template files under a `site` attribute,
 # e.g. {{ site.title }}.
 
@@ -18,6 +20,12 @@ title = "Joe Muller"
 # Default author
 default_author = "Joe Muller"
 
+# Domain for refernce links on PDF slidedecks
+if os.environ.get("DEBUG"):
+    homepage = "http://localhost:8080/"
+else:
+    homepage = "https://joemull.net/"
+
 # Language
 lang = "en-US"
 
@@ -30,6 +38,7 @@ extensions = [
 holly = {
     "roots": [
         {"root_url": "@root/blog//"},
+        {"root_url": "@root/slides//"},
     ],
     "homepage": {
         "root_urls": ["@root/blog//"],
