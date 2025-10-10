@@ -1,0 +1,14 @@
+.rendered-link {
+  display: inline;
+  word-break: break-word;
+  color: currentColor;
+  .legible-link {
+    word-break: break-all;
+  }
+}
+.links .rendered-link {
+  display: inline-flex;
+}
+table .rendered-link {
+  word-break: normal;
+}

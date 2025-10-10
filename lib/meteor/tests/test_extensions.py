@@ -14,16 +14,16 @@ def test_typography_em_dash():
 
 
 def test_format_html():
-    from lib.meteor.extensions import minify_event
+    from lib.meteor.extensions import minify
 
-    result = minify_event.format_html('<p  class=" crispy">apple</p>\n <p>pear</p>')
+    result = minify.format_html('<p  class=" crispy">apple</p>\n <p>pear</p>')
     assert result == "<p class=crispy>apple</p><p>pear</p>"
 
 
 def test_format_css():
-    from lib.meteor.extensions import minify_event
+    from lib.meteor.extensions import minify
 
-    result = minify_event.format_css(
+    result = minify.format_css(
         "body {  \n color: #000; abbr {  display:  none; background: blue; } }"
     )
     assert result == "body{color:#000}body abbr{background:#00f;display:none}"

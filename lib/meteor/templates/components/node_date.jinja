@@ -1,0 +1,14 @@
+{% from "components/vt_name.jinja" import vt_name %}
+
+{% macro node_date(node) -%}
+  {% if node.date %}
+    <div class="node-date">
+      <time
+        style="view-transition-name: {{ vt_name(node, "date") }};"
+        datetime="{{ node.date }}"
+      >
+        {{ node.date.strftime('%d %B %Y') }}
+      </time>
+    </div>
+  {% endif %}
+{%- endmacro %}

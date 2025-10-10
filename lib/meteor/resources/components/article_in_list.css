@@ -1,0 +1,30 @@
+/* Blog entry index */
+.article-in-list {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+    text-decoration: none;
+    position: relative;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    margin-block-start: var(--space-l);
+    width: var(--step-3);
+    height: var(--step-3);
+    clip-path: polygon(0 50%, 80% 0, 100% 100%, 20% 90%);
+    background: var(--clr-accent);
+    flex-shrink: 0;
+  }
+}
+
+/* View transitions */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}

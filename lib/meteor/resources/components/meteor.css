@@ -1,0 +1,7 @@
+.meteor {
+  margin-block-start: var(--space-2xs);
+  transform: rotate(-2deg);
+  width: 100vw;
+  height: var(--step-1);
+  background-color: var(--clr-accent);
+}

@@ -3,7 +3,7 @@ title: Git and GitHub for Word users
 date: 2023-07-20
 ---
 
-{% from "components.jinja" import icon %}
+{% from "components/icon_tabler.jinja" import icon_tabler %}
 
 <div class="flex wrap">
   <img style="width: 8rem;" src="@root/images/Word-icon.svg" alt="Microsoft Word icon">
@@ -79,7 +79,7 @@ You don’t need to worry about the binary layer unless you’re Keanu Reeves, o
 
 ### Folder: Repository
 
-{{ icon("folder", "Folder icon") }}
+{{ icon_tabler("folder", "Folder icon") }}
 
 In a complicated Word-based project, there is often a folder for the project, with multiple Word files saved inside. They might be various drafts, or they might be pieces of a long manuscript like a book.
 
@@ -91,7 +91,7 @@ People use GitHub because it makes sending folders of code a lot easier. In that
 
 ### Save: Commit
 
-{{ icon("device-floppy", "Floppy disk icon") }}
+{{ icon_tabler("device-floppy", "Floppy disk icon") }}
 
 After making a change, you “commit” it to save it.
 
@@ -109,7 +109,7 @@ There are ways to save without committing, but they require code editors. See **
 
 ### Version: Branch
 
-{{ icon("git-branch", "Git branch icon") }}
+{{ icon_tabler("git-branch", "Git branch icon") }}
 
 When you make a copy of a Word doc and then edit the copy, it becomes a separate version. If a co-author makes changes on another copy, then you have two versions you must reconcile.
 
@@ -135,7 +135,7 @@ At first it felt odd to me that Git version control does not rely on file names.
 
 ### Email: Issue
 
-{{ icon("mail", "Mail icon") }}
+{{ icon_tabler("mail", "Mail icon") }}
 
 In a Word-based workflow, there is no dedicated way to request that someone write something new. If there’s not already a draft to comment on, the request might just be directly communicated to the writer.
 
@@ -157,7 +157,7 @@ People do this to provide context when working between many different files and 
 
 ### Attachment: Pull request
 
-{{ icon("paperclip", "Paperclip icon") }}
+{{ icon_tabler("paperclip", "Paperclip icon") }}
 
 When you finish a piece of work in a Word doc, you might send it to your collaborator via email, or you might just let them know that you’ve finished your bit in a shared online doc and you’re ready for them to look at it.
 
@@ -171,7 +171,7 @@ This tells GitHub that if and when the changes are accepted, then issue 751 shou
 
 ### Tracked change: Diff
 
-{{ icon("file-diff", "File diff icon") }}
+{{ icon_tabler("file-diff", "File diff icon") }}
 
 When you’re opening a pull request, GitHub will run a scan and show all the differences or “diffs” between your branch and the main branch.
 
@@ -187,7 +187,7 @@ But look on the bright side. The practical, efficient, blindingly well-lit side.
 
 ### Review: Review
 
-{{ icon("eyeglass", "Eyeglasses icon") }}
+{{ icon_tabler("eyeglass", "Eyeglasses icon") }}
 
 This one is the same in both worlds!
 
@@ -201,7 +201,7 @@ It’s less common to add your own edits at this stage, but you can if you want,
 
 ### Accept all changes: Merge
 
-{{ icon("git-merge", "Git merge icon") }}
+{{ icon_tabler("git-merge", "Git merge icon") }}
 
 In Word, there comes a time when you’ve looked over all the tracked changes and you’re ready to accept them all, creating a clean copy.
 
@@ -213,7 +213,7 @@ Conflicts sometimes arise at this stage, and they are tricky to unravel. If that
 
 ### Save as: Fork
 
-{{ icon("git-fork", "Git fork icon") }}
+{{ icon_tabler("git-fork", "Git fork icon") }}
 
 You can save your own version of someone’s repository by “forking” it. You’ll get the same exact code in your version, and a full history of all the branches and commits too.
 
@@ -232,7 +232,7 @@ Not sure whether to open a branch or create a fork?
 
 ### Download: Clone
 
-{{ icon("download", "Download icon") }}
+{{ icon_tabler("download", "Download icon") }}
 
 The first time I was asked to contribute to a public repository, I clutched my introvert pearls in horror. I felt my desk was about to be dragged onto a stage in front of a bunch of people, who would then sit there watching me write. So much pressure!
 
@@ -248,7 +248,7 @@ You might be tempted to use the “Download ZIP” or “Download raw file” bu
 
 ### Sync: Pull
 
-{{ icon("cloud-down", "Sync down icon") }}
+{{ icon_tabler("cloud-down", "Sync down icon") }}
 
 The latest versions of Word can automatically sync documents across computers, if the document is shared by multiple people.
 
@@ -258,7 +258,7 @@ The command for syncing down from the cloud is called _pull_. Each pull action o
 
 ### Upload: Push
 
-{{ icon("cloud-up", "Sync up icon") }}
+{{ icon_tabler("cloud-up", "Sync up icon") }}
 
 Word files that have been edited offline can be uploaded to shared locations, obviously, but then you have to figure out how to combine them with existing versions, or at least how to communicate to other people that your version is the latest one.
 
@@ -270,7 +270,7 @@ But programmers usually go one further. They create a new branch on their comput
 
 ### Undo: Commit
 
-{{ icon("arrow-back-up", "Undo icon") }}
+{{ icon_tabler("arrow-back-up", "Undo icon") }}
 
 What! How can _undo_ just be a commit?
 

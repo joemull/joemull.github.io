@@ -2,22 +2,19 @@
 @font-face {
   font-family: "Source Sans";
   src: url("fonts/source-sans/SourceSans3-VariableFont_wght.ttf");
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
+  font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Smythe";
   src: url("fonts/smythe/Smythe-Regular.ttf");
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
+  font-weight: 400;
   font-display: swap;
 }
 @font-face {
   font-family: "Kode Mono";
   src: url("fonts/kode-mono/KodeMono-VariableFont_wght.ttf");
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
+  font-weight: 400;
   font-display: swap;
 }
 
@@ -34,12 +31,12 @@
   --clr-mustard: #915f06;
 
   /* Abstract colors */
-  @media (prefers-color-scheme: light) {
-    --clr-foreground: var(--clr-black);
+  --clr-foreground: var(--clr-black);
+  @media screen {
     --clr-background: var(--clr-white);
-    --clr-alt-background: var(--clr-sandy-white);
-    --clr-accent: var(--clr-mustard);
   }
+  --clr-alt-background: var(--clr-sandy-white);
+  --clr-accent: var(--clr-mustard);
   @media (prefers-color-scheme: dark) {
     --clr-foreground: var(--clr-white);
     --clr-background: var(--clr-black);
@@ -63,6 +60,10 @@
   --step-7: clamp(2.3328rem, 2.0827rem + 1.2504vi, 3.0518rem);
   --step-8: clamp(2.7994rem, 2.4462rem + 1.7658vi, 3.8147rem);
   --step-9: clamp(3.3592rem, 2.8691rem + 2.4507vi, 4.7684rem);
+  --step-10: clamp(4.0311rem, 3.2418rem + 3.508vw, 5.9605rem);
+  --step-11: clamp(4.8373rem, 3.7682rem + 4.7514vw, 7.4506rem);
+  --step-12: clamp(5.8048rem, 4.3695rem + 6.379vw, 9.3132rem);
+  --step-13: clamp(6.9657rem, 5.0529rem + 8.5015vw, 11.6415rem);
 
   /* Spaces */
   /* Source: https://utopia.fyi/space/calculator/ */
@@ -75,4 +76,16 @@
   --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vi, 3.75rem);
   --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vi, 5rem);
   --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vi, 7.5rem);
+
+  /* Abstract sizes and spaces */
+  --body-text-size: var(--step-4);
+  --body-line-height: 1.5;
+  --shorter-line-height: 1.1;
+  --flow-space: var(--space-xs);
+  --h1-size: var(--step-8);
+  --h2-size: var(--step-7);
+  --h3-size: var(--step-6);
+  --h4-size: var(--step-5);
+  --h5-size: var(--step-4);
+  --h6-size: var(--step-4);
 }

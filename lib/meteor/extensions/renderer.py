@@ -1,3 +1,4 @@
+from string import whitespace
 from urllib.parse import urlparse
 from xml.etree import ElementTree
 
@@ -27,8 +28,22 @@ def icon(icon_name, a11y_title):
     return ElementTree.tostring(root, encoding="unicode")
 
 
+def h2_and_rest(markdown):
+    """
+    Gets a leading h2 off of a Markdown block.
+    """
+    markdown = markdown.lstrip(whitespace)
+    if markdown.startswith("##"):
+        h2 = markdown.split("\n")[0]
+        rest = markdown.replace(h2, "").strip(whitespace)
+        return h2, rest
+    else:
+        return "", markdown
+
+
 # Jinja environment
 jinja_environment = None
+
 
 @ark.events.register(ark.events.Event.INIT)
 def initialize_jinja_environment():
@@ -39,6 +54,7 @@ def initialize_jinja_environment():
     global jinja_environment
     jinja_environment = jinja2.Environment(**settings)
     jinja_environment.filters["icon"] = icon
+    jinja_environment.filters["h2_and_rest"] = h2_and_rest
 
 
 # Jinja prerender callback for Ark
@@ -49,7 +65,10 @@ def prerender_jinja(text, node):
     use Jinja template syntax, tags, and filters in source content.
     """
     template = jinja_environment.from_string(text)
-    text_after_jinja = template.render({})
+    context = {
+        "inc": ark.site.includes(),
+    }
+    text_after_jinja = template.render(context)
     return text_after_jinja
 
 
@@ -76,8 +95,11 @@ class MeteorRendererMixin(object):
             "url": url,
             "body": body,
         }
-        template = jinja_environment.get_template("a.jinja")
+        template = jinja_environment.get_template(
+            "components/rendered_link.jinja",
+        )
         return template.render(context)
+
 
 MeteorExtension = MarkoExtension(
     renderer_mixins=[MeteorRendererMixin],

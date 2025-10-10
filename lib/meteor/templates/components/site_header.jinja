@@ -1,0 +1,9 @@
+<header class="site-header">
+  <div class="site-title">
+    <a href="@root/">{{ site.title or "Site Title" }}</a>
+  </div>
+  {% if site.tagline %}
+    <p>{{ site.tagline.strip() }}</p>
+  {% endif %}
+  <nav>{{ inc.menu or automenu }}</nav>
+</header>

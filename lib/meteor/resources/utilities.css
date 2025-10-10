@@ -2,9 +2,7 @@
 .container {
   margin-inline: auto;
   max-width: 60rem;
-  @media (width < 40rem) {
-    padding-inline: 1rem;
-  }
+  padding-inline: 1rem;
   @media (width >= 40rem) {
     padding-inline: 2rem;
   }
@@ -143,7 +141,7 @@
   &.column-reverse {
     flex-direction: column-reverse;
   }
-  @media (width <= 40rem) {
+  @media (width < 40rem) {
     &.row-small {
       flex-direction: row;
     }
@@ -151,7 +149,7 @@
       flex-direction: column;
     }
   }
-  @media (width > 40rem) {
+  @media (width >= 40rem) {
     &.row-large {
       flex-direction: row;
     }

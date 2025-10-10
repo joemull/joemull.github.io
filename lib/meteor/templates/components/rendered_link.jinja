@@ -1,7 +1,7 @@
-{% from "components.jinja" import icon %}
+{% from "components/icon_tabler.jinja" import icon_tabler -%}
 
 <a
-  class="external-link"
+  class="rendered-link"
   href="{{ url }}"
   {% if is_external %}
     target="_blank"
@@ -15,7 +15,7 @@
   {%- endif %}
   {%- if is_external -%}
     {%- if external_icon -%}
-      {{- icon("external-link", "opens in new tab") -}}
+      {{- icon_tabler("external-link", "opens in new tab") -}}
     {%- else -%}
       <span class="sr-only"> (opens in new tab)</span>
     {%- endif -%}

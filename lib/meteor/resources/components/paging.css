@@ -1,0 +1,18 @@
+/* Paging */
+.paging {
+  display: flex;
+  align-items: center;
+  font-size: var(--body-text-size);
+  .prev,
+  .next {
+    color: var(--clr-accent);
+    text-decoration-line: none;
+    vertical-align: top;
+  }
+  .prev {
+    margin-inline-end: var(--space-xs);
+  }
+  .next {
+    margin-inline-start: var(--space-xs);
+  }
+}

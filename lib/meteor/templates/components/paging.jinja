@@ -1,0 +1,13 @@
+<nav class="paging">
+  {% if node.page_num > 1 %}
+    <a class="prev" href="{{ node.prev_url }}">
+      {{ icon("arrow-narrow-left", "Previous page") }}
+    </a>
+  {% endif %}
+  <span class="current"> {{ node.page_num }} / {{ node.total_pages }} </span>
+  {% if node.page_num < node.total_pages %}
+    <a class="next" href="{{ node.next_url }}">
+      {{ icon("arrow-narrow-right", "Next page") }}
+    </a>
+  {% endif %}
+</nav>

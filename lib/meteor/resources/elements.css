@@ -9,7 +9,7 @@ article {
   padding-block: var(--space-xl);
 }
 h1 {
-  font-size: var(--step-8);
+  font-size: var(--h1-size);
   font-weight: normal;
   font-family: var(--ff-smythe);
   letter-spacing: 1px;
@@ -17,39 +17,40 @@ h1 {
   --flow-space: var(--space-xl);
 }
 h2 {
-  font-size: var(--step-7);
-  font-weight: medium;
+  font-size: var(--h2-size);
+  font-weight: normal;
   font-family: var(--ff-smythe);
   letter-spacing: 1px;
   --flow-space: var(--space-l);
 }
 h3 {
-  font-size: var(--step-6);
+  font-size: var(--h3-size);
   --flow-space: var(--space-m);
 }
 h4 {
-  font-size: var(--step-5);
+  font-size: var(--h4-size);
   --flow-space: var(--space-m);
 }
 h5 {
-  font-size: var(--step-4);
+  font-size: var(--h5-size);
   --flow-space: var(--space-m);
 }
 h6 {
-  font-size: var(--step-4);
+  font-size: var(--h6-size);
   --flow-space: var(--space-m);
 }
 p {
   text-wrap: pretty;
-  font-size: var(--step-4);
+  font-size: var(--body-text-size);
   --flow-space: var(--space-s);
-  svg {
-    display: inline;
-    vertical-align: top;
-  }
+}
+p svg,
+li svg {
+  display: inline;
+  vertical-align: top;
 }
 li {
-  font-size: var(--step-4);
+  font-size: var(--body-text-size);
   --flow-space: var(--space-s);
 }
 a:focus-visible {
@@ -63,4 +64,27 @@ code {
   background: var(--clr-alt-background);
   font-family: var(--ff-mono);
   position: relative;
+  /* text-wrap: wrap; */
+}
+pre,
+code {
+  white-space: pre-line;
+}
+th,
+td {
+  font-size: var(--body-text-size);
+  border: 1px solid var(--clr-foreground);
+  padding: var(--space-3xs);
+}
+output {
+  padding: var(--space-2xs);
+  display: block;
+  border: var(--space-3xs) dotted var(--clr-accent);
+}
+i,
+em {
+  font-style: italic;
+}
+button {
+  padding: 0;
 }
