@@ -1,42 +1,16 @@
 .prose {
+  /* Width constraint */
   & > * {
     max-width: 36rem;
   }
-  .not-prose {
-    max-width: none;
-  }
 
-  /* Code blocks */
-  pre:has(code) {
-    max-width: none;
-  }
-  pre code {
-    padding: var(--space-xs);
-    display: block;
-    max-width: 80ch;
-    overflow-x: auto;
-    clip-path: polygon(
-      0.5rem 0,
-      calc(100% - 0.5rem) 0,
-      100% 0.5rem,
-      100% calc(100% - 0.5rem),
-      calc(100% - 0.5rem) 100%,
-      0.5rem 100%,
-      0 calc(100% - 0.5rem),
-      0 0.5rem
-    );
-  }
-
-  /* Inline code */
-  p code {
-    padding-inline: 0.5rem;
-    padding-block: 0.25rem;
-  }
-
-  /* Figures */
+  /* Exceptions to width constraint */
+  .not-prose,
+  pre:has(code),
   p:has(img) {
     max-width: none;
   }
+
   p img {
     max-width: min(48rem, 90vw);
   }

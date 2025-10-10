@@ -1,0 +1,23 @@
+/* Code blocks */
+pre code {
+  padding: var(--space-xs);
+  display: block;
+  max-width: 80ch;
+  overflow-x: auto;
+  clip-path: polygon(
+    0.5rem 0,
+    calc(100% - 0.5rem) 0,
+    100% 0.5rem,
+    100% calc(100% - 0.5rem),
+    calc(100% - 0.5rem) 100%,
+    0.5rem 100%,
+    0 calc(100% - 0.5rem),
+    0 0.5rem
+  );
+}
+
+/* Inline code */
+p code {
+  padding-inline: 0.5rem;
+  padding-block: 0.25rem;
+}
