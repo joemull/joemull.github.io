@@ -1,3 +1,4 @@
+import re
 from string import whitespace
 from urllib.parse import urlparse
 from xml.etree import ElementTree
@@ -7,7 +8,8 @@ import jinja2
 from tablerpy import OutlineIcon, get_icon
 from marko import Markdown
 from marko.ext.gfm import GFM
-from marko.helpers import MarkoExtension
+from marko.helpers import MarkoExtension, render_dispatch
+from marko.html_renderer import HTMLRenderer
 
 
 # SVG namespace
@@ -24,8 +26,10 @@ def icon(icon_name, a11y_title):
     with open(icon_path, "rt") as icon_ref:
         svg_string = icon_ref.read()
         root = ElementTree.fromstring(svg_string)
-        root.insert(0, ElementTree.fromstring(f"<title>{a11y_title}</title>"))
-    return ElementTree.tostring(root, encoding="unicode")
+        title = ElementTree.fromstring(f"<title>{a11y_title}</title>")
+        root.insert(0, title)
+        svg = ElementTree.tostring(root, encoding="unicode")
+    return svg
 
 
 def h2_and_rest(markdown):
@@ -81,6 +85,16 @@ def render_page(page_data, template_filename):
 
 # Marko extension
 class MeteorRendererMixin(object):
+    # Override the lists of escaped elements to omit `title` since it is used in inline SVGs
+    tagfilter = re.compile(
+        r"<(textarea|style|xmp|iframe|noembed|noframes|script|plaintext)",
+        flags=re.I,
+    )
+    tagfilter_no_open = re.compile(
+        r"(?<!^)( *)<(textarea|style|xmp|iframe|noembed|noframes|script|plaintext)",
+        flags=re.I,
+    )
+
     def render_link(self, element):
         # From overwritten function
         title = f' title="{self.escape_html(element.title)}"' if element.title else ""
@@ -109,5 +123,5 @@ MeteorExtension = MarkoExtension(
 # Marko renderer callback for Ark
 @ark.renderers.register("md")
 def render_markdown(text):
-    markdown = Markdown(extensions=[MeteorExtension, GFM])
+    markdown = Markdown(extensions=[GFM, MeteorExtension])
     return markdown(text)
