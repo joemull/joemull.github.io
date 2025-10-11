@@ -10,6 +10,8 @@ ark==7.7.0
     # via -r requirements.in
 colorama==0.4.6
     # via ark
+feedgenerator==2.2.1
+    # via -r requirements.in
 holly==2.0.0
     # via -r requirements.in
 ibis==3.3.0

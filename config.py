@@ -50,3 +50,6 @@ jinja_settings = {
     "trim_blocks": True,
     "lstrip_blocks": True,
 }
+
+# RSS settings
+rss_root_urls = ["@root/blog//"]

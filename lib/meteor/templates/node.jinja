@@ -17,6 +17,12 @@
       {%- endif -%}
     </title>
     <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="@root/feed.xml"
+      title="{{ site.title }}"
+    />
+    <link
       rel="preload"
       href="@root/fonts/source-sans/SourceSans3-VariableFont_wght.ttf"
       as="font"
@@ -44,8 +50,8 @@
 
     <link rel="icon" href="@root/images/favicon.svg" />
     <meta name="author" content="{{ node.author or site.default_author }}" />
-    {% if node.meta_description %}
-      <meta name="description" content="{{ node.meta_description.strip() }}" />
+    {% if inc.site_description %}
+      <meta name="description" content="{{ inc.site_description|striptags }}" />
     {% else %}
       <meta
         name="description"

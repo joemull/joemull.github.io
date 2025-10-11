@@ -1,3 +1,4 @@
+- [RSS](feed.xml)
 - [ORCiD](https://orcid.org/0000-0003-3230-6090/)
 - [zirk.us](https://zirk.us/@joemull)
 - [LinkedIn](https://www.linkedin.com/in/jhmuller/)
