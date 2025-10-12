@@ -1,18 +1,13 @@
 import datetime
 import hashlib
 import uuid
+from xml.etree import ElementTree
 
 import ark
 import holly
 import os
 from feedgenerator import Atom1Feed
 from jinja2 import filters
-
-
-def get_ark_node_description(node):
-    stripped = filters.do_striptags(node.html)
-    truncated = stripped[:97].rsplit(" ", 1)[0] + "..."
-    return truncated
 
 
 def get_child_nodes(feed, node):
@@ -35,6 +30,21 @@ def get_nodes(feed):
         nodes.sort(key=lambda node: node.get("date") or default_date, reverse=True)
         nodes = nodes[:10]
     return nodes
+
+
+def get_ark_node_description(node):
+    stripped = filters.do_striptags(node.html)
+    truncated = stripped[:97].rsplit(" ", 1)[0] + "..."
+    return truncated
+
+
+def insert_icon(xml, favicon_url):
+    ElementTree.register_namespace("", "http://www.w3.org/2005/Atom")
+    root = ElementTree.fromstring(xml)
+    icon = ElementTree.fromstring(f"<icon>{favicon_url}</icon>")
+    root.insert(0, icon)
+    xml = ElementTree.tostring(root, encoding="unicode")
+    return xml
 
 
 @ark.events.register(ark.events.Event.EXIT_BUILD)
@@ -74,6 +84,11 @@ def generate_feed():
         )
 
     xml = feed.writeString("utf-8")
+    favicon_path = ark.utils.rewrite_urls(f"'@root/images/favicon.svg'", path)
+    favicon_url = os.path.join(homepage, favicon_path.strip("'"))
+    xml = insert_icon(xml, favicon_url)
+
+    xml = ark.utils.rewrite_urls(xml, path)
     if not os.path.isdir(os.path.dirname(path)):
         os.makedirs(os.path.dirname(path))
     with open(path, "w") as file:
