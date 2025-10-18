@@ -60,10 +60,6 @@ code {
   position: relative;
   /* text-wrap: wrap; */
 }
-pre,
-code {
-  white-space: pre-wrap;
-}
 th,
 td {
   font-size: var(--body-text-size);
