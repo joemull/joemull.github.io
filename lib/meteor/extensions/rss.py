@@ -1,10 +1,7 @@
 import datetime
-import hashlib
-import uuid
 from xml.etree import ElementTree
 
 import ark
-import holly
 import os
 from feedgenerator import Atom1Feed
 from jinja2 import filters
@@ -73,7 +70,6 @@ def generate_feed():
         author = node.get("author") or config.get("default_author", "")
         node_path = ark.utils.rewrite_urls(f"'{node.url}'", path).strip("'")
         url = os.path.join(homepage, node_path)
-        item_license = config.get("default_license", "")
         feed.add_item(
             title=node.get("title"),
             author_name=author,
@@ -84,7 +80,7 @@ def generate_feed():
         )
 
     xml = feed.writeString("utf-8")
-    favicon_path = ark.utils.rewrite_urls(f"'@root/images/favicon.svg'", path)
+    favicon_path = ark.utils.rewrite_urls("'@root/images/favicon.svg'", path)
     favicon_url = os.path.join(homepage, favicon_path.strip("'"))
     xml = insert_icon(xml, favicon_url)
 

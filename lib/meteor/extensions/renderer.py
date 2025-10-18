@@ -8,8 +8,7 @@ import jinja2
 from tablerpy import OutlineIcon, get_icon
 from marko import Markdown
 from marko.ext.gfm import GFM
-from marko.helpers import MarkoExtension, render_dispatch
-from marko.html_renderer import HTMLRenderer
+from marko.helpers import MarkoExtension
 
 
 # SVG namespace
