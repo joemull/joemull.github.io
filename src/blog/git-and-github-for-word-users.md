@@ -77,9 +77,7 @@ You don’t need to worry about the binary layer unless you’re Keanu Reeves, o
 
 ## Word actions compared to Git and GitHub actions
 
-### Folder: Repository
-
-{{ icon_tabler("folder", "Folder icon") }}
+### {{ icon_tabler("folder", "Folder icon") }} Folder: Repository
 
 In a complicated Word-based project, there is often a folder for the project, with multiple Word files saved inside. They might be various drafts, or they might be pieces of a long manuscript like a book.
 
@@ -89,9 +87,7 @@ When people move code around, they do so by moving these repositories, because i
 
 People use GitHub because it makes sending folders of code a lot easier. In that way, GitHub is kind of like Google Drive or Dropbox or Microsoft OneDrive.
 
-### Save: Commit
-
-{{ icon_tabler("device-floppy", "Floppy disk icon") }}
+### {{ icon_tabler("device-floppy", "Floppy disk icon") }} Save: Commit
 
 After making a change, you “commit” it to save it.
 
@@ -107,9 +103,7 @@ One other weird thing about commits. In Word you can save each file independentl
 
 There are ways to save without committing, but they require code editors. See **Clone: Download** below.
 
-### Version: Branch
-
-{{ icon_tabler("git-branch", "Git branch icon") }}
+### {{ icon_tabler("git-branch", "Git branch icon") }} Version: Branch
 
 When you make a copy of a Word doc and then edit the copy, it becomes a separate version. If a co-author makes changes on another copy, then you have two versions you must reconcile.
 
@@ -133,9 +127,7 @@ Git does not let you do any of these things. It can’t, because branches are ma
 
 At first it felt odd to me that Git version control does not rely on file names. Then I realized it’s actually very economical. Then my whole paradigm shifted, and I could never look at a file name like “Article draft final 14 revised by Janet 6 July 13 final FINAL.docx” the same way again.
 
-### Email: Issue
-
-{{ icon_tabler("mail", "Mail icon") }}
+### {{ icon_tabler("mail", "Mail icon") }} Email: Issue
 
 In a Word-based workflow, there is no dedicated way to request that someone write something new. If there’s not already a draft to comment on, the request might just be directly communicated to the writer.
 
@@ -155,9 +147,7 @@ Or in the name of a branch:
 
 People do this to provide context when working between many different files and conversation threads, especially on large projects. GitHub helpfully turns these hashed numbers into hyperlinks, allowing anyone to follow the context trail even much later.
 
-### Attachment: Pull request
-
-{{ icon_tabler("paperclip", "Paperclip icon") }}
+### {{ icon_tabler("paperclip", "Paperclip icon") }} Attachment: Pull request
 
 When you finish a piece of work in a Word doc, you might send it to your collaborator via email, or you might just let them know that you’ve finished your bit in a shared online doc and you’re ready for them to look at it.
 
@@ -169,9 +159,7 @@ In addition to the actual edits or changes, pull requests take a name and a desc
 
 This tells GitHub that if and when the changes are accepted, then issue 751 should be automatically “closed” or marked complete.
 
-### Tracked change: Diff
-
-{{ icon_tabler("file-diff", "File diff icon") }}
+### {{ icon_tabler("file-diff", "File diff icon") }} Tracked change: Diff
 
 When you’re opening a pull request, GitHub will run a scan and show all the differences or “diffs” between your branch and the main branch.
 
@@ -185,9 +173,7 @@ I found this a bit scary in the beginning. What if someone goes back and judges 
 
 But look on the bright side. The practical, efficient, blindingly well-lit side. If somebody finds a problem, they can click a few things and see exactly when and ideally _why_ someone changed the offending code, even years later. This makes it possible to fine-tune a project over time, with consistency, clarity, and precision.
 
-### Review: Review
-
-{{ icon_tabler("eyeglass", "Eyeglasses icon") }}
+### {{ icon_tabler("eyeglass", "Eyeglasses icon") }} Review: Review
 
 This one is the same in both worlds!
 
@@ -199,9 +185,7 @@ During a review, you can comment on the diffs you see, and at the bottom you wil
 
 It’s less common to add your own edits at this stage, but you can if you want, by adding more commits to the same branch. The pull request will be automatically expanded to include your commits in its scope.
 
-### Accept all changes: Merge
-
-{{ icon_tabler("git-merge", "Git merge icon") }}
+### {{ icon_tabler("git-merge", "Git merge icon") }} Accept all changes: Merge
 
 In Word, there comes a time when you’ve looked over all the tracked changes and you’re ready to accept them all, creating a clean copy.
 
@@ -211,9 +195,7 @@ The process of accepting a branch is called _merging_. It effectively takes all 
 
 Conflicts sometimes arise at this stage, and they are tricky to unravel. If that happens, ask a friend with deeper Git knowledge for help.
 
-### Save as: Fork
-
-{{ icon_tabler("git-fork", "Git fork icon") }}
+### {{ icon_tabler("git-fork", "Git fork icon") }} Save as: Fork
 
 You can save your own version of someone’s repository by “forking” it. You’ll get the same exact code in your version, and a full history of all the branches and commits too.
 
@@ -230,9 +212,7 @@ Not sure whether to open a branch or create a fork?
 - Go for a branch if you’re given the option. The main authors of the repository might have put you on a team that has some editing privileges, and it will be cleaner if you just put a branch inside their repository. Ask for access if you think it’s likely you will get it.
 - If you have no access, create a fork.
 
-### Download: Clone
-
-{{ icon_tabler("download", "Download icon") }}
+### {{ icon_tabler("download", "Download icon") }} Download: Clone
 
 The first time I was asked to contribute to a public repository, I clutched my introvert pearls in horror. I felt my desk was about to be dragged onto a stage in front of a bunch of people, who would then sit there watching me write. So much pressure!
 
@@ -246,9 +226,7 @@ Downloading is called “cloning” in Git lingo. If you want to do this, choose
 
 You might be tempted to use the “Download ZIP” or “Download raw file” buttons on GitHub, but that will be harder in the long run if you want to edit anything and send your changes to someone else. The part of Git that helps you send code will get separated from the project files, and you won’t be able to re-attach it without expert help.
 
-### Sync: Pull
-
-{{ icon_tabler("cloud-down", "Sync down icon") }}
+### {{ icon_tabler("cloud-down", "Sync down icon") }} Sync: Pull
 
 The latest versions of Word can automatically sync documents across computers, if the document is shared by multiple people.
 
@@ -256,9 +234,7 @@ Git can sync things too, but only on your explicit instruction. You remain in di
 
 The command for syncing down from the cloud is called _pull_. Each pull action only affects the current branch. If you have made local changes, Git will require advanced instructions on how to combine them with remote changes.
 
-### Upload: Push
-
-{{ icon_tabler("cloud-up", "Sync up icon") }}
+### {{ icon_tabler("cloud-up", "Sync up icon") }} Upload: Push
 
 Word files that have been edited offline can be uploaded to shared locations, obviously, but then you have to figure out how to combine them with existing versions, or at least how to communicate to other people that your version is the latest one.
 
@@ -268,9 +244,7 @@ If no one else changed the branch since you pulled it, then you can push your ch
 
 But programmers usually go one further. They create a new branch on their computer, add their changes as commits, and finally push that new branch to GitHub. As long as no one else used the same branch name, everything goes smoothly. They can then open a pull request for that branch, view diffs, receive reviews, and finally merge their work into the main branch.
 
-### Undo: Commit
-
-{{ icon_tabler("arrow-back-up", "Undo icon") }}
+### {{ icon_tabler("arrow-back-up", "Undo icon") }} Undo: Commit
 
 What! How can _undo_ just be a commit?
 

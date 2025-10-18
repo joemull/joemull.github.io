@@ -6,9 +6,6 @@
     word-break: break-all;
   }
 }
-.links .rendered-link {
-  display: inline-flex;
-}
 table .rendered-link {
   word-break: normal;
 }

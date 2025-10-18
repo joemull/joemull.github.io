@@ -13,7 +13,6 @@ h1 {
   font-weight: normal;
   font-family: var(--ff-smythe);
   letter-spacing: 1px;
-  line-height: 1.1;
   --flow-space: var(--space-xl);
 }
 h2 {
@@ -43,11 +42,6 @@ p {
   text-wrap: pretty;
   font-size: var(--body-text-size);
   --flow-space: var(--space-s);
-}
-p svg,
-li svg {
-  display: inline;
-  vertical-align: top;
 }
 li {
   font-size: var(--body-text-size);

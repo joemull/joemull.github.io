@@ -1,0 +1,12 @@
+.icon-tabler {
+  display: inline;
+  height: 0.9em;
+  width: 0.9em;
+  vertical-align: -0.125em;
+}
+span + .icon-tabler {
+  margin-left: 2px;
+}
+span + .icon-tabler-external-link {
+  margin-right: -2px;
+}

@@ -31,7 +31,7 @@ It may sound like my assessment approach is all wrong. That I should assess what
 
 The question is fair, but it is only considering the case of a proficient, employed, experienced developer. It does not acknowledge the learning process as a process with different stages.
 
-Think about it another way. Two things are true about real-world web development skills in 2025:
+Think about it another way. Two things are true about real-world web development skills in 2024:
 
 1. Most of the programming challenges I face in my day job as a web developer can’t be solved by GAI alone, or they are slower to solve with GAI, because they are too distributed, complex, and contingent on team goals, legacy systems, and discipline-specific concerns. This may change in the future, but it also may not.
 

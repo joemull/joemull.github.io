@@ -29,7 +29,7 @@ def test_format_css():
 
 
 def test_filter_drafts(monkeypatch):
-    ark.extensions.load_module(extensions, "draft_filter")
+    ark.extensions.load_module(extensions, "drafts")
     path = pathlib.Path("something/not-ready--draft.md")
 
     monkeypatch.setenv("DRAFTS", "true")
@@ -46,9 +46,9 @@ def test_filter_drafts(monkeypatch):
 
 
 def test_icon():
-    from lib.meteor.extensions import renderer
+    from lib.meteor.extensions import filters
 
-    icon = renderer.icon("cat", "Cat icon")
+    icon = filters.icon("cat", "Cat icon")
     assert icon.startswith("<svg")
 
 

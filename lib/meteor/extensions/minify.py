@@ -62,14 +62,16 @@ def minify_html():
 @ark.events.register(ark.events.Event.MAIN_BUILD)
 def minify_css():
     files_to_write = []
+    outputs = set(output for _, output in css_patterns_and_outputs)
     for patterns, output in css_patterns_and_outputs:
         formatted_text = ""
         for pattern in patterns:
             for file in glob(pattern, recursive=True):
-                with open(file, "r") as read_ref:
-                    if DEBUG:
-                        formatted_text += "\n\n"
-                    formatted_text += format_css(read_ref.read())
+                if file not in outputs:
+                    with open(file, "r") as read_ref:
+                        if DEBUG:
+                            formatted_text += "\n\n"
+                        formatted_text += format_css(read_ref.read())
                 os.remove(file)
         files_to_write.append((formatted_text, output))
     for formatted_text, output in files_to_write:
