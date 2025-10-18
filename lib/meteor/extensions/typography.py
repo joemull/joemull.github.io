@@ -1,13 +1,11 @@
 import re
 
-
 import ark
-
 
 # This identifies a two-hyphen dash, like --, surrounded by any plausible
 # two characters, including letters and punctuation or markdown syntax that
 # might feasibly be used on either side of the dash.
-TWO_HYPHEN_DASH = re.compile(r"(?<=[a-z\"'”’_\*])--(?=[a-z\"'“‘_\*])")
+TWO_HYPHEN_DASH = re.compile(r"(?<=[a-zA-Z\"'”’_\*])--(?=[a-zA-Z\"'“‘_\*])")
 
 
 @ark.filters.register(ark.filters.Filter.NODE_TEXT)
