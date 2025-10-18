@@ -73,10 +73,14 @@
   .rendered-link svg {
     display: none;
   }
-  /* Modification of node-date */
-  .node-date {
+  /* Modification of node-date-and-word-count */
+  .node-date-and-word-count {
     font-size: var(--step-4);
   }
+  .node-date-and-word-count .word-count {
+    display: none;
+  }
+
   @media screen {
     background: radial-gradient(
       farthest-corner at 100% 0%,

@@ -47,6 +47,16 @@ def render_page(page_data, template_filename):
     return template.render(page_data)
 
 
+# Word-count calculator
+@ark.filters.register(ark.filters.Filter.FILE_TEXT)
+def count_words(raw_text, meta_dict):
+    """
+    Count the words in a node and add the count to the metadata.
+    """
+    meta_dict["word_count"] = "{:,}".format(len(raw_text.split(" ")))
+    return raw_text
+
+
 # Marko extension
 class MeteorRendererMixin(object):
     # Override the lists of escaped elements to omit `title` since it is used in inline SVGs

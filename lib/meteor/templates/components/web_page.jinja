@@ -1,4 +1,4 @@
-{% from "components/node_date.jinja" import node_date %}
+{% from "components/node_date_and_word_count.jinja" import node_date_and_word_count %}
 
 <div class="webpage">
   {% include "components/meteor.jinja" %}
@@ -18,7 +18,7 @@
         {% if node.subtitle %}
           {{ node.subtitle }}
         {% endif %}
-        {{ node_date(node) }}
+        {{ node_date_and_word_count(node) }}
 
         {% if node.image %}
           <img src="@root/images/{{ node.image }}" />

@@ -1,6 +1,6 @@
 {% from "components/icon_tabler.jinja" import icon_tabler %}
 {% from "components/vt_name.jinja" import vt_name %}
-{% from "components/node_date.jinja" import node_date %}
+{% from "components/node_date_and_word_count.jinja" import node_date_and_word_count %}
 {% from "slide_components/slide_frame.jinja" import slide_frame %}
 {% from "slide_components/slide_text.jinja" import slide_text %}
 {% from "slide_components/slide_title.jinja" import slide_title %}
@@ -40,7 +40,7 @@
         <h1 style="view-transition-name: {{ vt_name(node, "title") }};">
           {{ node.title }}
         </h1>
-        {{ node_date(node) }}
+        {{ node_date_and_word_count(node) }}
         {% set url_for_print_display = site.homepage + "/".join(node.path) + site.file_extension %}
         <div class="footnote">
           <p class="first-slide-html-link">

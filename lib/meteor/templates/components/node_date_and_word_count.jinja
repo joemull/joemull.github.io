@@ -1,14 +1,17 @@
 {% from "components/vt_name.jinja" import vt_name %}
 
-{% macro node_date(node) -%}
+{% macro node_date_and_word_count(node) -%}
   {% if node.date %}
-    <div class="node-date">
+    <div class="node-date-and-word-count">
       <time
         style="view-transition-name: {{ vt_name(node, "date") }};"
         datetime="{{ node.date }}"
       >
         {{ node.date.strftime('%d %B %Y') }}
       </time>
+      {% if node.word_count %}
+        <span class="word-count">{{ node.word_count }} words</span>
+      {% endif %}
     </div>
   {% endif %}
 {%- endmacro %}
