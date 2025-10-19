@@ -1,17 +1,10 @@
+{% from "components/node_date_and_word_count.jinja" import node_date_and_word_count %}
+
 <div class="article-in-list">
   <div class="flow flow-first-child">
     <h2 style="view-transition-name: {{ vt_name(entry, "title") }};">
       <a href="{{ entry.url }}"> {{ entry.title }} </a>
     </h2>
-    {% if entry.date %}
-      <div class="fs-2 ff-mono">
-        <time
-          style="view-transition-name: {{ vt_name(entry, "date") }};"
-          datetime="{{ entry.date }}"
-        >
-          {{ entry.date.strftime('%d %B %Y') }}
-        </time>
-      </div>
-    {% endif %}
+    {{ node_date_and_word_count(entry) }}
   </div>
 </div>

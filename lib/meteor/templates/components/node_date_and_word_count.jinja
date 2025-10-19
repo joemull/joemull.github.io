@@ -1,14 +1,16 @@
 {% from "components/vt_name.jinja" import vt_name %}
 
 {% macro node_date_and_word_count(node) -%}
-  {% if node.date %}
+  {% if node.date or node.word_count and not node.is_dir_index and not node.is_homepage_index and not node.title == "About" %}
     <div class="node-date-and-word-count">
-      <time
-        style="view-transition-name: {{ vt_name(node, "date") }};"
-        datetime="{{ node.date }}"
-      >
-        {{ node.date.strftime('%d %B %Y') }}
-      </time>
+      {% if node.date %}
+        <time
+          style="view-transition-name: {{ vt_name(node, "date") }};"
+          datetime="{{ node.date }}"
+        >
+          {{ node.date.strftime('%d %B %Y') }}
+        </time>
+      {% endif %}
       {% if node.word_count %}
         <span class="word-count">{{ node.word_count }} words</span>
       {% endif %}
