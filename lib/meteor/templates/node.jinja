@@ -1,6 +1,5 @@
 {% from "components/icon_tabler.jinja" import icon_tabler %}
 {% from "components/vt_name.jinja" import vt_name %}
-
 <!DOCTYPE html>
 <html lang="{{ site.lang }}" dir="ltr">
   <head>
@@ -8,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
     <title>
-      {%- if node.is_tag_index %}Tag:{% endif -%}
+      {%- if node.is_tag_index %}
+        Tag:
+      {% endif -%}
       {%- if node.meta_title or node.title -%}
         {{- node.meta_title or node.title }}
         - {{ site.title -}}
@@ -36,7 +37,6 @@
       type="font/ttf"
       crossorigin
     />
-
     <link rel="preload" as="style" href="@root/base.min.css" />
     <link rel="stylesheet" href="@root/base.min.css" />
     <link rel="preload" as="style" href="@root/components.min.css" />
@@ -47,7 +47,6 @@
     {% endif %}
     <link rel="preload" as="style" href="@root/utilities.min.css" />
     <link rel="stylesheet" href="@root/utilities.min.css" />
-
     <link rel="icon" href="@root/images/favicon.svg" />
     <meta name="author" content="{{ node.author or site.default_author }}" />
     {% if inc.site_description %}

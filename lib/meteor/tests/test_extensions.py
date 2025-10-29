@@ -3,6 +3,14 @@ import pathlib
 import ark
 
 ark.site.init()
+ark.extensions.load_bundled_extensions()
+ark.extensions.load_installed_extensions()
+ark.extensions.load_site_extensions()
+ark.extensions.load_theme_extensions()
+ark.events.fire(ark.events.Event.INIT)
+ark.events.fire(ark.events.Event.MAIN)
+ark.events.fire(ark.events.Event.EXIT)
+
 extensions = ark.site.theme("extensions")
 
 
@@ -46,10 +54,10 @@ def test_filter_drafts(monkeypatch):
 
 
 def test_icon():
-    from lib.meteor.extensions import filters
+    from lib.meteor.extensions import jinja_config
 
-    icon = filters.icon("cat", "Cat icon")
-    assert icon.startswith("<svg")
+    text = jinja_config.icon("cat", "Cat icon")
+    assert text.startswith("<svg")
 
 
 def test_prerender_jinja():

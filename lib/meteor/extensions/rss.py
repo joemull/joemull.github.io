@@ -1,8 +1,8 @@
 import datetime
+import os
 from xml.etree import ElementTree
 
 import ark
-import os
 from feedgenerator import Atom1Feed
 from jinja2 import filters
 

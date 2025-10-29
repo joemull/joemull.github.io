@@ -9,7 +9,7 @@ TWO_HYPHEN_DASH = re.compile(r"(?<=[a-zA-Z\"'”’_\*])--(?=[a-zA-Z\"'“‘_\*
 
 
 @ark.filters.register(ark.filters.Filter.NODE_TEXT)
-def em_dash(text, node):
+def em_dash(text: str, _node: ark.nodes.Node) -> str:
     """
     Convert to hyphens with letters on either side to an em dash.
     """

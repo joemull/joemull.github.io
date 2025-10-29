@@ -1,38 +1,23 @@
 import re
+from typing import TYPE_CHECKING, Protocol
 from urllib.parse import urlparse
 
 import ark
-import jinja2
-from marko import Markdown
+from marko import Markdown, inline
 from marko.ext.gfm import GFM
 from marko.helpers import MarkoExtension
-from filters import icon, h2_and_rest
-
-
-# Jinja environment
-jinja_environment = None
-
-
-@ark.events.register(ark.events.Event.INIT)
-def initialize_jinja_environment():
-    settings = {
-        "loader": jinja2.FileSystemLoader(ark.site.theme("templates")),
-    }
-    settings.update(ark.site.config.get("jinja_settings", {}))
-    global jinja_environment
-    jinja_environment = jinja2.Environment(**settings)
-    jinja_environment.filters["icon"] = icon
-    jinja_environment.filters["h2_and_rest"] = h2_and_rest
 
 
 # Jinja prerender callback for Ark
 @ark.filters.register(ark.filters.Filter.NODE_TEXT)
-def prerender_jinja(text, node):
+def prerender_jinja(text: str, _node: type[ark.nodes.Node]) -> str:
     """
     Apply Jinja to the source Markdown files, so that you can
     use Jinja template syntax, tags, and filters in source content.
     """
-    template = jinja_environment.from_string(text)
+    import ark_jinja
+
+    template = ark_jinja.jinja_environment.from_string(text)
     context = {
         "inc": ark.site.includes(),
     }
@@ -42,14 +27,16 @@ def prerender_jinja(text, node):
 
 # Jinja render callback for Ark
 @ark.templates.register("jinja")
-def render_page(page_data, template_filename):
-    template = jinja_environment.get_template(template_filename)
+def render_page(page_data, template_filename: str) -> str:
+    import ark_jinja
+
+    template = ark_jinja.jinja_environment.get_template(template_filename)
     return template.render(page_data)
 
 
 # Word-count calculator
 @ark.filters.register(ark.filters.Filter.FILE_TEXT)
-def count_words(raw_text, meta_dict):
+def count_words(raw_text: str, meta_dict: dict[str, str]) -> str:
     """
     Count the words in a node and add the count to the metadata.
     """
@@ -58,8 +45,20 @@ def count_words(raw_text, meta_dict):
 
 
 # Marko extension
-class MeteorRendererMixin(object):
-    # Override the lists of escaped elements to omit `title` since it is used in inline SVGs
+if TYPE_CHECKING:
+
+    class MarkoRendererProtocol(Protocol):
+        def escape_html(self, title: str) -> str: ...
+        def escape_url(self, dest: str) -> str: ...
+        def render_children(self, element: inline.Link) -> str: ...
+else:
+
+    class MarkoRendererProtocol(Protocol): ...
+
+
+class MeteorRendererMixin(MarkoRendererProtocol):
+    # Override the lists of escaped elements to omit `title`
+    # since it is used in inline SVGs
     tagfilter = re.compile(
         r"<(textarea|style|xmp|iframe|noembed|noframes|script|plaintext)",
         flags=re.I,
@@ -69,7 +68,7 @@ class MeteorRendererMixin(object):
         flags=re.I,
     )
 
-    def render_link(self, element):
+    def render_link(self, element: inline.Link):
         # From overwritten function
         title = f' title="{self.escape_html(element.title)}"' if element.title else ""
         url = self.escape_url(element.dest)
@@ -83,7 +82,9 @@ class MeteorRendererMixin(object):
             "url": url,
             "body": body,
         }
-        template = jinja_environment.get_template(
+        import ark_jinja
+
+        template = ark_jinja.jinja_environment.get_template(
             "components/rendered_link.jinja",
         )
         return template.render(context)
@@ -96,6 +97,6 @@ MeteorExtension = MarkoExtension(
 
 # Marko renderer callback for Ark
 @ark.renderers.register("md")
-def render_markdown(text):
+def render_markdown(text: str) -> str:
     markdown = Markdown(extensions=[GFM, MeteorExtension])
     return markdown(text)

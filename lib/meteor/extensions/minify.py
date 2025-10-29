@@ -1,10 +1,9 @@
-from glob import glob
 import os
+from glob import glob
 
 import ark
 import lightningcss
 from minify_html import minify
-
 
 DEBUG = os.environ.get("DEBUG")
 lightningcss.calc_parser_flags(nesting=True)

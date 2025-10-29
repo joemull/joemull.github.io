@@ -4,19 +4,18 @@
 {% from "slide_components/slide_frame.jinja" import slide_frame %}
 {% from "slide_components/slide_text.jinja" import slide_text %}
 {% from "slide_components/slide_title.jinja" import slide_title %}
-
 <div class="slide-deck">
   <header class="header">
     <nav>
       <ul role="list">
         <li>
           <button type="button" name="print" value="print" class="nav-link">
-            {{ icon_tabler("file-type-pdf", "PDF") }}
+            {{ icon_tabler('file-type-pdf', 'PDF') }}
           </button>
         </li>
         <li>
           <a href="@root/slides//" class="nav-link">
-            {{ icon_tabler("x", "Close slide show") }}
+            {{ icon_tabler('x', 'Close slide show') }}
           </a>
         </li>
       </ul>
@@ -24,7 +23,7 @@
   </header>
   <main
     class="content"
-    style="view-transition-name: {{ vt_name(node, "slide_deck") }};"
+    style="view-transition-name: {{ vt_name(node, "slide_deck") }}"
   >
     {% call slide_frame() %}
       <dialog open class="small-screen-help-text flow">
@@ -45,7 +44,7 @@
         <div class="footnote">
           <p class="first-slide-html-link">
             <a href="{{ url_for_print_display }}">
-              {{ url_for_print_display }}
+              {{- url_for_print_display -}}
             </a>
           </p>
           {{ inc.birkbeck_licensing }}
@@ -64,7 +63,7 @@
             value="previous"
             class="nav-link"
           >
-            {{ icon_tabler("caret-left", "Previous slide") }}
+            {{ icon_tabler('caret-left', 'Previous slide') }}
           </button>
         </li>
         <li>
@@ -74,7 +73,7 @@
             value="next"
             class="nav-link"
           >
-            {{ icon_tabler("caret-right", "Next slide") }}
+            {{ icon_tabler('caret-right', 'Next slide') }}
           </button>
         </li>
       </ul>
@@ -94,6 +93,7 @@
   const buttonRight = document.querySelector(
     `.slide-deck .nav-link[value="next"]`,
   );
+
   function getSlideIndex() {
     const params = new URLSearchParams(window.location.search);
     return Number(params?.get("slide") || 1) - 1;
@@ -103,6 +103,7 @@
   const slideFrames = Array.from(
     document.querySelectorAll(".slide-deck .content > *"),
   );
+
   function changeSlide(i) {
     if (0 <= i && i < slideFrames.length) {
       for (const slide of slideFrames) {

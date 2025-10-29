@@ -1,4 +1,25 @@
-[tool.pytest.ini_options]
-pythonpath = [
-  "."
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "joemull"
+version = "1.0"
+requires-python = ">= 3.12"
+dependencies = [
+  "ark",
+  "feedgenerator",
+  "holly",
+  "lightningcss",
+  "marko",
+  "minify-html",
+  "pytest",
+  "tablerpy",
+  "ruff",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ty.src]
+include = [".venv/lib/python3*/site-packages/ark/extensions"]
