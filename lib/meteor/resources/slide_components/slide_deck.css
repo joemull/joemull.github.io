@@ -37,10 +37,12 @@
     background: inherit;
     border: none;
   }
+  li:has(.nav-link:not(.displayed)) {
+    display: none;
+  }
   .nav-link:hover {
     cursor: pointer;
   }
-  .nav-link a,
   .nav-link svg {
     display: block;
     width: var(--step-8);
@@ -84,7 +86,7 @@
   @media screen {
     background: radial-gradient(
       farthest-corner at 100% 0%,
-      transparent 70%,
+      var(--clr-background) 70%,
       var(--clr-accent) 200%
     );
   }

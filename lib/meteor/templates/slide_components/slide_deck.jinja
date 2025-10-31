@@ -4,19 +4,50 @@
 {% from "slide_components/slide_frame.jinja" import slide_frame %}
 {% from "slide_components/slide_text.jinja" import slide_text %}
 {% from "slide_components/slide_title.jinja" import slide_title %}
+
 <div class="slide-deck">
   <header class="header">
     <nav>
       <ul role="list">
         <li>
-          <button type="button" name="print" value="print" class="nav-link">
+          <button
+            type="button"
+            name="print"
+            value="print"
+            class="nav-link displayed"
+          >
             {{ icon_tabler('file-type-pdf', 'PDF') }}
           </button>
         </li>
         <li>
-          <a href="@root/slides//" class="nav-link">
+          <button
+            type="button"
+            name="enter-fullscreen"
+            value="enter-fullscreen"
+            class="nav-link displayed"
+          >
+            {{ icon_tabler('maximize', 'Enter fullscreen') }}
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            name="exit-fullscreen"
+            value="exit-fullscreen"
+            class="nav-link"
+          >
+            {{ icon_tabler('minimize', 'Exit fullscreen') }}
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            name="close"
+            value="close"
+            class="nav-link displayed"
+          >
             {{ icon_tabler('x', 'Close slide show') }}
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
@@ -61,7 +92,7 @@
             type="button"
             name="change-slide"
             value="previous"
-            class="nav-link"
+            class="nav-link displayed"
           >
             {{ icon_tabler('caret-left', 'Previous slide') }}
           </button>
@@ -71,7 +102,7 @@
             type="button"
             name="change-slide"
             value="next"
-            class="nav-link"
+            class="nav-link displayed"
           >
             {{ icon_tabler('caret-right', 'Next slide') }}
           </button>
@@ -84,8 +115,14 @@
   const buttonPrint = document.querySelector(
     `.slide-deck .nav-link[value="print"]`,
   );
-  const aClose = document.querySelector(
-    `.slide-deck .nav-link[href$="slides.html"]`,
+  const buttonEnterFullscreen = document.querySelector(
+    `.slide-deck .nav-link[value="enter-fullscreen"]`,
+  );
+  const buttonExitFullscreen = document.querySelector(
+    `.slide-deck .nav-link[value="exit-fullscreen"]`,
+  );
+  const buttonClose = document.querySelector(
+    `.slide-deck .nav-link[value="close"]`,
   );
   const buttonLeft = document.querySelector(
     `.slide-deck .nav-link[value="previous"]`,
@@ -100,6 +137,7 @@
   }
   let slideIndex = getSlideIndex();
 
+  const slideDeck = document.querySelector(".slide-deck");
   const slideFrames = Array.from(
     document.querySelectorAll(".slide-deck .content > *"),
   );
@@ -123,6 +161,21 @@
     if (button) {
       if (button.value === "print") {
         print();
+      } else if (button.value === "enter-fullscreen") {
+        if (slideDeck.requestFullscreen) {
+          slideDeck.requestFullscreen();
+          buttonExitFullscreen.classList.toggle("displayed", true);
+          buttonEnterFullscreen.classList.toggle("displayed", false);
+        }
+      } else if (button.value === "exit-fullscreen") {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
+      } else if (button.value === "close") {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        }
+        window.location.assign("@root/slides//");
       }
     }
   });
@@ -140,11 +193,25 @@
     }
   });
 
+  document.addEventListener("fullscreenchange", (e) => {
+    if (document.fullscreenElement) {
+      buttonExitFullscreen.classList.toggle("displayed", true);
+      buttonEnterFullscreen.classList.toggle("displayed", false);
+    } else {
+      buttonExitFullscreen.classList.toggle("displayed", false);
+      buttonEnterFullscreen.classList.toggle("displayed", true);
+    }
+  });
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Print") {
       buttonPrint.classList.toggle("active", true);
     } else if (e.key === "Escape") {
-      aClose.classList.toggle("active", true);
+      if (document.fullscreenElement) {
+        buttonExitFullscreen.classList.toggle("active", true);
+      } else {
+        buttonClose.classList.toggle("active", true);
+      }
     } else if (e.key === "ArrowLeft") {
       buttonLeft.classList.toggle("active", true);
       slideIndex = getSlideIndex() - 1;
@@ -160,7 +227,11 @@
     if (e.key === "Print") {
       print();
     } else if (e.key === "Escape") {
-      window.location.assign("@root/slides//");
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        window.location.assign("@root/slides//");
+      }
     } else if (e.key === "ArrowLeft") {
       buttonLeft.classList.toggle("active", false);
     } else if (e.key === "ArrowRight" || e.key === " ") {
