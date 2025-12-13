@@ -5,15 +5,13 @@ import ark
 from minify_html import minify
 from tablerpy import OutlineIcon, get_icon
 
-# SVG namespace
-ElementTree.register_namespace("", "http://www.w3.org/2000/svg")
-
 
 # Jinja filters
 def icon(icon_name: str, a11y_title: str) -> str:
     """
     A Jinja filter for inserting an SVG Tabler icon.
     """
+    ElementTree.register_namespace("", "http://www.w3.org/2000/svg")
     tablerpy_name = icon_name.replace("-", "_").upper()
     try:
         icon_path = str(get_icon(getattr(OutlineIcon, tablerpy_name)))

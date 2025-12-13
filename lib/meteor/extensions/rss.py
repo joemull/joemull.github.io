@@ -52,11 +52,7 @@ def generate_feed():
     description = filters.do_striptags(
         ark.site.includes().get("site_description", ""),
     )
-    homepage = config.get("homepage", "")
-    if not homepage:
-        raise Exception(
-            "There must be a homepage specified in config.py to generate the RSS feed."
-        )
+    homepage = config["homepage"]
     rss_link = os.path.join(homepage, relative_link)
     feed = Atom1Feed(
         title=title,
@@ -67,7 +63,7 @@ def generate_feed():
     nodes = get_nodes(feed)
     path = ark.site.out(relative_link)
     for node in nodes:
-        author = node.get("author") or config.get("default_author", "")
+        author = node.get("author") or config.get("author", "")
         node_path = ark.utils.rewrite_urls(f"'{node.url}'", path).strip("'")
         url = os.path.join(homepage, node_path)
         feed.add_item(

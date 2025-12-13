@@ -15,7 +15,7 @@ title: About
     itemprop="worksFor" itemscope
     itemtype="https://schema.org/Organization">
     <meta itemprop="name" content="Birkbeck, University of London">
-    <link itemprop="url" href="https://www.bbk.ac.uk/">
+    <link itemprop="url" href="/">
   </div>
 </div>
 

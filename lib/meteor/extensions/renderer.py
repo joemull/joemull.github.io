@@ -40,7 +40,7 @@ def count_words(raw_text: str, meta_dict: dict[str, str]) -> str:
     """
     Count the words in a node and add the count to the metadata.
     """
-    meta_dict["word_count"] = "{:,}".format(len(raw_text.split(" ")))
+    meta_dict["word_count"] = len(raw_text.split(" "))
     return raw_text
 
 

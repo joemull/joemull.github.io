@@ -15,6 +15,7 @@ dependencies = [
   "minify-html",
   "pytest",
   "tablerpy",
+  "rdflib[json]",
   "ruff",
 ]
 

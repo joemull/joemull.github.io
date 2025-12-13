@@ -48,7 +48,7 @@
     <link rel="preload" as="style" href="@root/utilities.min.css" />
     <link rel="stylesheet" href="@root/utilities.min.css" />
     <link rel="icon" href="@root/images/favicon.svg" />
-    <meta name="author" content="{{ node.author or site.default_author }}" />
+    <meta name="author" content="{{ node.author or site.author }}" />
     {% if inc.site_description %}
       <meta name="description" content="{{ inc.site_description|striptags }}" />
     {% else %}
@@ -57,6 +57,11 @@
         content="{{ node.html|striptags|truncate(100) }}"
       />
     {% endif %}
+    <!-- prettier-ignore-start -->
+      <script type="application/ld+json">
+        {{- json_ld -}}
+      </script>
+    <!-- prettier-ignore-end -->
     {{ inc.head }}
   </head>
   <body>

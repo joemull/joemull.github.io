@@ -39,10 +39,14 @@ pygments==2.19.2
     #   ark
     #   pytest
     #   syntext
+pyparsing==3.2.5
+    # via rdflib
 pytest==8.4.2
     # via joemull (pyproject.toml)
 pyyaml==6.0.3
     # via ark
+rdflib==7.4.0
+    # via joemull (pyproject.toml)
 ruff==0.14.2
     # via joemull (pyproject.toml)
 shortcodes==5.4.0
