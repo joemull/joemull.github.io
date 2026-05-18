@@ -1,0 +1,65 @@
+<div class="uri">
+  <div class="figure">
+    <!--
+    <div class="whole-uri">
+      https://ror.org/04a1a1e81
+    </div>
+    -->
+    <div class="uri-parts">
+      <span class="scheme">https</span>
+      <span class="host">ror.org</span>
+      <span class="path">04a1a1e81</span>
+    </div>
+    <div class="uri-labels">
+      <span class="scheme">scheme</span>
+      <span class="host">host</span>
+      <span class="path">path</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Requires memory alpha slide deck theme */
+  .uri {
+    .uri-parts {
+      font-family: monospace;
+      font-size: var(--step-6);
+      margin-block: 2rem;
+    }
+    .uri-parts,
+    .uri-labels {
+      font-family: monospace;
+      display: flex;
+    }
+    .uri-parts {
+      gap: 2rem;
+    }
+    .uri-labels {
+      font-style: italic;
+      font-size: var(--step-5);
+      margin-block-start: 5rem;
+      gap: 6rem;
+    }
+    .uri-labels > span {
+      position: relative;
+    }
+    .uri-labels > span:before {
+      content: "";
+      width: var(--space-3xs);
+      height: var(--space-xl);
+      background: var(--clr-foreground);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+    }
+    /*
+    .uri-parts .host {
+      outline: var(--space-2xs) solid var(--clr-alpha-yellow);
+      outline-offset: var(--space-2xs);
+    }
+    */
+    .host-label {
+      margin-inline-start: 8ch;
+    }
+  }
+</style>
