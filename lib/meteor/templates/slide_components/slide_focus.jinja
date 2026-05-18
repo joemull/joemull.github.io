@@ -1,15 +1,11 @@
 {% from "slide_components/slide_frame.jinja" import slide_frame %}
 <!-- prettier-ignore-start -->
-{% macro slide_grid_four_images() -%}
+{% macro slide_focus() -%}
 {%- set outer_caller = caller() -%}
-{% set h2, rest = outer_caller|heading_and_rest %}
 {%- call slide_frame() -%}
+<div class="slide-focus flow">
 
-{{ h2 }}
-
-<div class="slide-grid-four-images">
-
-{{ rest }}
+{{ outer_caller }}
 
 </div>
 {%- endcall -%}

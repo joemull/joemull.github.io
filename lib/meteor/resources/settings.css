@@ -18,6 +18,20 @@
   font-display: swap;
 }
 
+/* Memory alpha fonts */
+@font-face {
+  font-family: "Poppins Regular";
+  src: url("fonts/poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Space Mono Regular";
+  src: url("fonts/space-mono/SpaceMono-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Space Mono Bold";
+  src: url("fonts/space-mono/SpaceMono-Bold.ttf") format("truetype");
+}
+
 /* Custom properties */
 :root {
   color-scheme: light dark;
@@ -48,6 +62,10 @@
   --ff-source-sans: "Source Sans", sans-serif;
   --ff-smythe: "Smythe", serif;
   --ff-mono: "Kode Mono", monospace;
+
+  --ff-poppins-regular: "Poppins Regular", sans-serif;
+  --ff-space-mono-regular: "Space Mono Regular", monospace;
+  --ff-space-mono-bold: "Space Mono Bold", monospace;
 
   /* Font sizes */
   /* Source: https://utopia.fyi/type/calculator */

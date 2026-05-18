@@ -1,0 +1,41 @@
+.why-splat {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+  --splat-height: 10rem;
+  grid-template-columns: calc(var(--splat-height) * 1.16) auto;
+  text-align: left;
+  .splat {
+    z-index: 0;
+    position: relative;
+    height: var(--splat-height);
+    text-align: left;
+  }
+  .why {
+    z-index: 10;
+    translate: calc(var(--splat-height) * 0.34) calc(var(--splat-height) * 0.34);
+    position: relative;
+    color: var(--clr-background);
+    font-size: var(--step-4);
+    font-family: var(--ff-space-mono-bold);
+    text-align: left;
+  }
+  svg {
+    z-index: 5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: var(--splat-height);
+  }
+  svg path {
+    fill: none;
+    stroke-width: 4;
+    stroke: var(--clr-black);
+  }
+}
+@media screen {
+  .why-splat svg path {
+    fill: var(--clr-foreground);
+    stroke-width: 0;
+  }
+}

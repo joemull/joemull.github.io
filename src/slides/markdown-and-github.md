@@ -2,6 +2,7 @@
 title: Markdown and GitHub
 date: 2025-10-07
 type: slide_deck
+title_footer: birkbeck_licensing
 ---
 
 {% from "slide_components/slide_columns.jinja" import slide_columns %}

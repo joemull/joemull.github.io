@@ -66,7 +66,9 @@
   </head>
   <body>
     {% if node.meta.get("type", "") == "slide_deck" %}
-      {% include "slide_components/slide_deck.jinja" %}
+      {% with slide_deck_theme = node.meta.get("theme", "meteor") %}
+        {% include "slide_components/slide_deck.jinja" %}
+      {% endwith %}
     {% else %}
       {% include "components/web_page.jinja" %}
     {% endif %}

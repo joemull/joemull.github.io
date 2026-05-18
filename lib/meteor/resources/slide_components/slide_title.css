@@ -4,7 +4,17 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  h1 {
-    font-size: var(--step-11);
+  --h1-size: var(--step-11);
+  --h2-size: var(--step-9);
+  .title-footer {
+    --flow-space: var(--space-l);
   }
+  .title-footer,
+  .title-footer p {
+    max-width: 40rem;
+    font-size: var(--step-4);
+  }
+}
+.slide-deck-theme-memory-alpha .slide-title {
+  --h1-size: var(--step-8);
 }

@@ -52,6 +52,11 @@ p {
   --flow-space: var(--space-s);
 }
 
+blockquote,
+blockquote + * {
+  --flow-space: var(--space-l);
+}
+
 li {
   font-size: var(--body-text-size);
   --flow-space: var(--space-s);

@@ -83,13 +83,6 @@
     display: none;
   }
 
-  @media screen {
-    background: radial-gradient(
-      farthest-corner at 100% 0%,
-      var(--clr-background) 70%,
-      var(--clr-accent) 200%
-    );
-  }
   .small-screen-help-text {
     background: var(--clr-background);
     max-width: 80vw;
@@ -107,6 +100,66 @@
   .small-screen-help-text,
   .first-slide-html-link {
     display: none;
+  }
+}
+
+.slide-deck-theme-meteor {
+  @media screen {
+    --clr-foreground: var(--clr-black);
+    --clr-background: var(--clr-white);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --clr-foreground: var(--clr-white);
+    --clr-background: var(--clr-black);
+    --clr-alt-background: var(--clr-deep-black);
+    --clr-accent: var(--clr-gold);
+  }
+
+  @media screen {
+    background: radial-gradient(
+      farthest-corner at 100% 0%,
+      var(--clr-background) 70%,
+      var(--clr-accent) 200%
+    );
+  }
+}
+
+.slide-deck-theme-memory-alpha {
+  font-family: var(--ff-poppins-regular);
+
+  h1 {
+    font-family: var(--ff-space-mono-regular);
+    font-weight: normal;
+  }
+  h2,
+  h3 {
+    font-family: var(--ff-space-mono-bold);
+    font-weight: normal;
+  }
+
+  /* Memory alpha colours */
+  --clr-alpha-black: #262522;
+  --clr-alpha-white: #fdf3e3;
+  --clr-alpha-blue: #36565f;
+  --clr-alpha-red: #bb4e30;
+  --clr-alpha-yellow: #c08031;
+
+  @media screen {
+    --clr-foreground: var(--clr-alpha-blue);
+    --clr-background: var(--clr-alpha-white);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --clr-foreground: var(--clr-alpha-white);
+    --clr-background: var(--clr-alpha-blue);
+    --clr-alt-background: var(--clr-alpha-black);
+    --clr-accent: var(--clr-alpha-yellow);
+  }
+
+  color: var(--clr-foreground);
+  @media screen {
+    background: var(--clr-background);
   }
 }
 

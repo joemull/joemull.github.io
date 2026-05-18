@@ -3,7 +3,7 @@
 <!-- prettier-ignore-start -->
 {% macro slide_render_markup(input_heading="Markdown", language="markdown") -%}
 {%- set outer_caller = caller() -%}
-{%- set h2, rest = outer_caller|h2_and_rest -%}
+{%- set h2, rest = outer_caller|heading_and_rest -%}
 {%- call slide_frame() -%}
 
 {{ h2 }}

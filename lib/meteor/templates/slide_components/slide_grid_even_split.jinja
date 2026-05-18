@@ -1,13 +1,13 @@
 {% from "slide_components/slide_frame.jinja" import slide_frame %}
 <!-- prettier-ignore-start -->
-{% macro slide_grid_four_images() -%}
+{% macro slide_grid_even_split() -%}
 {%- set outer_caller = caller() -%}
 {% set h2, rest = outer_caller|heading_and_rest %}
 {%- call slide_frame() -%}
 
 {{ h2 }}
 
-<div class="slide-grid-four-images">
+<div class="slide-grid-even-split">
 
 {{ rest }}
 

@@ -1,0 +1,15 @@
+.slide-grid-even-split {
+  --body-text-size: var(--step-4);
+  --gap: var(--space-l);
+  --half-width: calc(
+    calc(var(--a4-long-side) - calc(var(--slide-padding) * 2) - var(--gap)) / 2
+  );
+  margin-block: 0;
+  height: var(--slide-height-below-h2);
+  gap: var(--gap);
+  grid-template-columns: repeat(2, var(--half-width));
+  display: grid;
+  img {
+    max-width: var(--half-width);
+  }
+}

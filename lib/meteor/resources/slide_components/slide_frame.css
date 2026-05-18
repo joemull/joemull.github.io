@@ -65,13 +65,6 @@
   :where(h2, h3, h4, h5, h6) {
     text-wrap: nowrap;
   }
-  .footnote {
-    --flow-space: var(--space-xl);
-  }
-  .footnote p {
-    max-width: 40rem;
-    font-size: var(--step-2);
-  }
   .prose > * {
     max-width: 40ch;
   }
@@ -87,6 +80,11 @@
   output :where(h3, h4, h5, h6) {
     font-size: var(--step-4);
   }
+}
+
+.slide-deck-theme-memory-alpha .slide-frame {
+  --h2-size: var(--step-5);
+  --h3-size: var(--step-4);
 }
 
 @page {

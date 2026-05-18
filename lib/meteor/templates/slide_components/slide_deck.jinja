@@ -5,7 +5,7 @@
 {% from "slide_components/slide_text.jinja" import slide_text %}
 {% from "slide_components/slide_title.jinja" import slide_title %}
 
-<div class="slide-deck">
+<div class="slide-deck slide-deck-theme-{{ slide_deck_theme }}">
   <header class="header">
     <nav>
       <ul role="list">
@@ -72,13 +72,21 @@
         </h1>
         {{ node_date_and_word_count(node) }}
         {% set url_for_print_display = site.homepage + "/".join(node.path) + site.file_extension %}
-        <div class="footnote">
+        <div class="title-footer flow">
           <p class="first-slide-html-link">
             <a href="{{ url_for_print_display }}">
               {{- url_for_print_display -}}
             </a>
           </p>
-          {{ inc.birkbeck_licensing }}
+          {% if node.title_footer %}
+            {% if node.title_footer == "birkbeck_licensing" %}
+              {{ inc.birkbeck_licensing }}
+            {% elif node.title_footer == "lower_decks_2026" %}
+              {{ inc.lower_decks_2026 }}
+            {% else %}
+              {{ node.title_footer }}
+            {% endif %}
+          {% endif %}
         </div>
       {% endcall %}
     {% endcall %}

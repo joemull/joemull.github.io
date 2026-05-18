@@ -28,15 +28,15 @@ def icon(icon_name: str, a11y_title: str) -> str:
         return minify(svg, keep_closing_tags=True)
 
 
-def h2_and_rest(markdown: str) -> tuple[str, str]:
+def heading_and_rest(markdown: str) -> tuple[str, str]:
     """
-    Gets a leading h2 off of a Markdown block.
+    Gets a leading h2 or h3 off of a Markdown block.
     """
     markdown = markdown.lstrip(whitespace)
     if markdown.startswith("##"):
-        h2 = markdown.split("\n")[0]
-        rest = markdown.replace(h2, "").strip(whitespace)
-        return h2, rest
+        heading = markdown.split("\n")[0]
+        rest = markdown.replace(heading, "").strip(whitespace)
+        return heading, rest
     else:
         return "", markdown
 
@@ -46,4 +46,4 @@ def load_jinja_filters() -> None:
     import ark_jinja
 
     ark_jinja.jinja_environment.filters["icon"] = icon
-    ark_jinja.jinja_environment.filters["h2_and_rest"] = h2_and_rest
+    ark_jinja.jinja_environment.filters["heading_and_rest"] = heading_and_rest
