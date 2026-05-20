@@ -98,7 +98,7 @@ We now have some links:
 
 {% call why_splat(n="1") %}
 
-Why do we need them? Can’t authors just type their affiliations in call it day?
+Why do we need them? Can’t authors just type their affiliations in and call it a day?
 
 {% endcall %}
 
@@ -164,7 +164,7 @@ Why is it worse when computers are involved?
 {%- endcall %}
 {% call slide_text() %}
 
-## Mundane context collapse
+## Banal context collapse
 
 The scholarly record available through the World Wide Web is international and immense, and what you find there has been recontextualized by library discovery systems and search engines.
 
@@ -388,24 +388,25 @@ We can get ROR IDs programmatically from ORCID because they encode them as URIs,
 
 People’s names overlap and vary in form, just like organization names.
 
-Examples from orcid.org:
+Real examples from orcid.org:
 
 <div class="fs-3">
 
 | First name | Last name |
 | ---------- | --------- |
-| Li-Li      | Li        |
-| Li li      | Li        |
-| Li         | Li Li     |
-| Sarah      | Smith     |
-| Sarah      | Smith     |
-| Sarah      | Smith     |
+| Joseph     | Muller    |
+| Joseph     | Muller    |
+| Joseph     | Muller    |
+| Joseph     | Muller    |
+| Joseph     | Muller    |
 
 </div>
 </div>
 <div class="flow">
 
-Does this mean Janeway should use a search interface, like with ROR records?
+![The ORCID logo](@root/images/orcid-logo.svg)
+
+Should use a search interface, like with ROR records?
 
 A search interface to choose an ORCID is not always enough. It is better to have each ORCID holder authorize the link by logging in to ORCID.
 
@@ -493,18 +494,43 @@ This small button will make a big difference to users and improve the quality of
 </div>
 
 {%- endcall %}
-{% call slide_text() -%}
+{% call slide_grid_even_split() -%}
 
 ## Turning to DOIs
 
+<div class="flow">
+
 Article titles vary and overlap too, so the five whys are similar for DOIs too.
+
+Real examples from Crossref:
+
+<div class="fs-3">
+
+| Title                                     |
+| ----------------------------------------- |
+| Back to the Future                        |
+| Back to the Future                        |
+| Back to the Future?                       |
+| Back from the Future                      |
+| Taking back the Future                    |
+| Back to the Future II comment             |
+| The Future Is Back; Back to the Future!\* |
+
+</div>
+</div>
+<div class="flow">
+
+![The DOI Foundation logo](@root/images/doi-foundation.svg)
 
 Differences in circumstances:
 
-- With a DOI, the Janeway user _generates_ the URI rather than finding and recording it.
-- The user who creates or edits a DOI is a journal editor or press manager, never an author.
-- There is a namespace in the path part of the URI representing the publisher, which is not found in ROR or ORCID IDs.
-- There are multiple registration agencies (e.g. Crossref, Datacite) that the user might need assistance working with.
+- Generation and registration of the URI rather than retrieval and linking
+- Journal editors and press managers, not authors
+- Additional namespace in URI path (e.g. 10.1234)
+- Multiple registation agencies
+- Location matters just as much as identity since a DOI represents a digital resource
+
+</div>
 
 {%- endcall %}
 {% call slide_grid_even_split() -%}
@@ -530,7 +556,7 @@ Here are some real DOI field values for articles published on Janeway installati
 </div>
 <div>
 
-- The first one is all good. It gets the prefix "https://doi.org/" to form a full URI when it is displayed and distributed.
+- Problems with uniformity and
 
 - The middle ones are duplicates. This can lead to problems when registering the DOI, though only one is displayed on the public article page.
 
@@ -607,11 +633,11 @@ These checks would happen before any communication with Crossref or Datacite, wh
 - When dealing with URIs, users work better when they have tailored interfaces that minimize error
 - Top strategies for guiding users with URIs include:
   - context-rich search
-  - limits on what can be edited freely
+  - sensible limits on what can be edited
   - input validation
   - prepopulation from linked open data
 - Usability can have an affect on metadata quality
-- Janeway already provides many tailored interfaces, but we need a few more for ORCID IDs and DOIs
+- Janeway already provides many tailored interfaces, but we need a few more for ORCID IDs and DOIs, as well as any other URIs we integrate in the future
 
 {%- endcall %}
 {% call slide_focus() -%}
@@ -624,6 +650,8 @@ These checks would happen before any communication with Crossref or Datacite, wh
 ## References (1 of 2)
 
 Furnas, G., T. Landauer, L. Gomez, and S. Dumais. “The Vocabulary Problem in Human-System Communication.” Communications of the ACM 30, no. 11 (1987): 964–71. https://doi.org/10.1145/32206.32212.
+
+“Manuscript Submission Systems Integration Best Practices.” ORCID, n.d. Accessed May 18, 2026. https://info.orcid.org/manuscript-submission-systems/.
 
 Molich, Rolf, and Jakob Nielsen. “Improving a Human-Computer Dialogue.” Communications of the ACM 33, no. 3 (1990): 338–48. https://doi.org/10.1145/77481.77486.
 
